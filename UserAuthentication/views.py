@@ -16,7 +16,7 @@ def login_user(request):
             login(request ,user)
             return HttpResponse("Done loged in ")
         else:
-            messages.info(request, 'Invalid username or password')
+            messages.info(request , "Invaild username or password")
     return render(request , 'login.html')
 
 def register(request):
