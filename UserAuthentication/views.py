@@ -1,14 +1,27 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .forms import CreateNewUser
-from django.contrib import messages
-
 from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponse
+
 # Create your views here.
 
 
 def login_user(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username = username , password =password)
+        if user is not None:
+            login(request ,user)
+            return HttpResponse("Done loged in ")
     return render(request , 'login.html')
 
 def register(request):
-    return render(request , 'signup.html')
+    if request.method == "POST":
+        form = CreateNewUser(request.POST)
+        if form.is_valid():
+           form.save()
+           return redirect('login')
+
+    context = {'form' : CreateNewUser()}
+    return render(request , 'signup.html' , context)

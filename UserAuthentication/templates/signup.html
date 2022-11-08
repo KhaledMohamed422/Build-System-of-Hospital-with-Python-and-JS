@@ -9,7 +9,10 @@
     <!-- main template css file -->
     <link rel="stylesheet" href="{% static 'css/style_sign.css'  %}" />
     <!-- font awesome library -->
-    <link rel="stylesheet" href="{% static 'fontawesomefree/css/all.min.css' %}">
+    <link
+      rel="stylesheet"
+      href="{% static 'fontawesomefree/css/all.min.css' %}"
+    />
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,46 +29,24 @@
         <div class="logsi">
           <h1><a href="#">Sign Up</a></h1>
         </div>
-        <form action="">
+        <form method="POST">
+          {% csrf_token %}
           <div class="input">
             <i class="fa-solid fa-user"></i>
-            <input
-              type="text"
-              name="yourname"
-              id=""
-              placeholder="type your name"
-              required
-            />
+            {{form.first_name}}
           </div>
           <div class="input">
             <i class="fa-solid fa-user"></i>
-            <input
-              type="text"
-              name="username"
-              id=""
-              placeholder="type your username"
-              required
-            />
+            
+            {{form.username}}
           </div>
           <div class="input">
             <i class="fa-solid fa-envelope"></i>
-            <input
-              type="email"
-              name="email"
-              id=""
-              placeholder="type your email"
-              required
-            />
+            {{form.email}}
           </div>
           <div class="input">
             <i class="fa-solid fa-lock"></i>
-            <input
-              type="password"
-              name="password"
-              id=""
-              placeholder="type your password"
-              required
-            />
+            {{form.password1}}
             <span class="eye">
               <i id="hide1" class="fa-regular fa-eye"></i>
               <i id="hide2" class="fa-regular fa-eye-slash"></i>
@@ -73,13 +54,8 @@
           </div>
           <div class="input">
             <i class="fa-solid fa-lock"></i>
-            <input
-              type="password"
-              name="password"
-              id=""
-              placeholder="type your repeat password"
-              required
-            />
+            {{form.password2}}
+            
             <span class="eye">
               <i id="hide1" class="fa-regular fa-eye"></i>
               <i id="hide2" class="fa-regular fa-eye-slash"></i>
@@ -88,8 +64,8 @@
           <div class="btnsign">
             <input type="submit" value="Sign Up" class="btn2" />
           </div>
+                   
         </form>
-       
       </div>
     </div>
     <!--end signup-->
