@@ -29,6 +29,12 @@
         <div class="logsi">
           <h1><a href="#">Sign Up</a></h1>
         </div>
+         <!-- show error here -->
+         {{ form.first_name.errors }}
+         {{ form.username.errors }}
+          {{ form.email.errors }}
+          {{ form.password1.errors }}
+         {{ form.password2.errors }}
         <form method="POST">
           {% csrf_token %}
           <div class="input">
