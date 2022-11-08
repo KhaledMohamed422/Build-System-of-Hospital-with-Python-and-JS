@@ -29,6 +29,7 @@
         <div class="logsi">
           <h1><a href="index.html">Login</a></h1>
         </div>
+
         <form method="POST">
             {% csrf_token %}
           <div class="input">
@@ -36,7 +37,6 @@
             <input
               type="text"
               name="username"
-              id=""
               placeholder="type your username"
               required
             />

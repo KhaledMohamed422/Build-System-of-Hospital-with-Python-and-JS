@@ -29,22 +29,27 @@
         <div class="logsi">
           <h1><a href="#">Sign Up</a></h1>
         </div>
+        <!-- show error here -->
+          {{ form.first_name.errors }}
+         {{ form.username.errors }}
+          {{ form.email.errors }}
+          {{ form.password1.errors }}
+         {{ form.password2.errors }}
         <form method="POST">
           {% csrf_token %}
           <div class="input">
-            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-user" ></i>
             {{form.first_name}}
           </div>
-          <div class="input">
-            <i class="fa-solid fa-user"></i>
-            
+          <div class="input" >
+            <i class="fa-solid fa-user" placeholder="{{form.username.label}}"></i>
             {{form.username}}
           </div>
-          <div class="input">
+          <div class="input" placeholder="{{form.email.label}}">
             <i class="fa-solid fa-envelope"></i>
             {{form.email}}
           </div>
-          <div class="input">
+          <div class="input" placeholder="{{form.password1.label}}">
             <i class="fa-solid fa-lock"></i>
             {{form.password1}}
             <span class="eye">
@@ -52,10 +57,9 @@
               <i id="hide2" class="fa-regular fa-eye-slash"></i>
             </span>
           </div>
-          <div class="input">
+          <div class="input" placeholder="{{form.password2.label}}">
             <i class="fa-solid fa-lock"></i>
             {{form.password2}}
-            
             <span class="eye">
               <i id="hide1" class="fa-regular fa-eye"></i>
               <i id="hide2" class="fa-regular fa-eye-slash"></i>
