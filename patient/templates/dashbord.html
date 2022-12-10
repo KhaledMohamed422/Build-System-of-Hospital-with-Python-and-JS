@@ -1,0 +1,91 @@
+{% extends "base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  {% block head_body %}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashbord</title>
+    <link rel="stylesheet" href="{% static 'css/css-Dashboard/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/css-Dashboard/all.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="header_dash">
+      <div class="loh">
+        <i class="fa-solid fa-stethoscope"
+          ><span class="clog"><span> m</span>edical <span>c</span>are</span></i
+        >
+      </div>
+
+      <div class="right_area">
+        <a href="#" class="logout_btn">Logout</a>
+      </div>
+    </div>
+    {% endblock head_body %} {% block content %}
+
+    <!-- Start content -->
+    <div class="content">
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input class="search-bar" placeholder="Search..." type="text" />
+        <div class="dash-btn">
+          <a href="{% url 'Dashboard' %}"><button>Home</button></a>
+        </div>
+      </div>
+      <div class="carddoctor">
+        <a href="{% url 'Profile' %}" class="myprofile-link"
+          ><div class="myprofile">
+            <img src="{% static 'images/PngItem_1468479.png' %}" />
+            <p>my profile</p>
+            <p>Update photo</p>
+          </div>
+        </a>
+
+        <a href="{% url 'AppointHistory' %}" class="myprofile-link">
+          <div class="myprofile">
+            <img
+              class="myprofile-image"
+              src="{% static 'images/wheelchair-service-4.png' %}"
+              alt=""
+            />
+            <p>my appointment</p>
+            <p>view appointment history</p>
+          </div>
+        </a>
+
+        <a href="{% url 'BookAppointment' %}" class="myprofile-link">
+          <div class="myprofile">
+            <img
+              class="myprofile-image"
+              src="{% static 'images/wheelchair-service-4.png' %}"
+              alt=""
+            />
+            <p>book my appointment</p>
+            <p>book appointment</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- End content -->
+  </body>
+  {% endblock content %}
+</html>
