@@ -18,9 +18,6 @@ def login_user(request):
         password = request.POST.get('password')
         user = authenticate(username = username , password =password)
         if user is not None:
-            patient_user = Patient.objects.get(user=user)
-            if patient_user is not None:
-               messages.info(request,patient_user)
                login(request, user)
                return redirect('/Patient/Dashboard')
         else:
