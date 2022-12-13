@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  {% block head_body %} {% endblock head_body %}
+
+
+  <!-- Start sidebar -->
+
+  <div class="sidebar">
+    <div class="profile">
+      <img src="{% static 'Images/IMG_٢٠٢١١٠٣١_١٢٥٧٢٤.jpg'%}" alt="">
+      <h4>Basem</h4>
+    </div>
+    <a href="Dashboard"><i class="fa-sharp fa-solid fa-house"></i><span>home</span></a>
+    <a href="myAppointment"><i class="fa-thin fa-solid fa-calendar-days"></i><span>appiontment</span></a>
+    <a href="patients"><i class="fa-solid fa-user"></i><span>patients</span></a>
+    <a href="Profile"><i class="fa-solid fa-hospital-user"></i><span>my profile</span></a>
+  </div>
+
+  <!-- End sidebar -->
+
+  {% block content %} {% endblock content %}
+
+
+</html>
+
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->

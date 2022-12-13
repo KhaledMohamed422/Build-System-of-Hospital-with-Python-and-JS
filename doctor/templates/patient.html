@@ -1,7 +1,7 @@
-{% load static %}
+{% extends "base.html" %}{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
+{% block head_body %}
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +18,7 @@
 </head>
 
 <body>
+<!--header page-->
   <div class="header_dash">
     <div class="loh">
       <i class="fa-solid fa-stethoscope"><span class="clog"><span>m</span>edical <span>c</span>are</span></i>
@@ -26,16 +27,12 @@
       <a href="#" class="logout_btn">Logout</a>
     </div>
   </div>
-  <div class="sidebar">
-    <div class="profile">
-      <img src="{% static 'Images/IMG_٢٠٢١١٠٣١_١٢٥٧٢٤.jpg'%}" alt="">
-      <h4>Basem</h4>
-    </div>
-    <a href="dashbord.html"><i class="fa-sharp fa-solid fa-house"></i><span>home</span></a>
-    <a href="myappointment.html"><i class="fa-thin fa-solid fa-calendar-days"></i><span>appiontment</span></a>
-    <a href="patient.html"><i class="fa-solid fa-user"></i><span>patients</span></a>
-    <a href="myprofile.html"><i class="fa-solid fa-hospital-user"></i><span>my profile</span></a>
-  </div>
+<!--end header-->
+
+
+{% endblock head_body %}}
+ {% block content %}
+<!--  the content of the page-->
   <div class="content">
     <div class="sebtn">
       <div class="search">
@@ -115,11 +112,11 @@
             <i class="fa-solid fa-trash"></i>
           </td>
         </tr>
-        
-       
+
+
       </table>
     </div>
   </div>
 </body>
-
+{% endblock content %}
 </html>
