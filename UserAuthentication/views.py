@@ -28,7 +28,7 @@ def login_user(request):
     return render(request , 'login.html')
 
 def register(request):
-    form = CreateNewUser(request.POST)
+    
     if request.method == 'POST':
         form = CreateNewUser(request.POST)
         if form.is_valid():
