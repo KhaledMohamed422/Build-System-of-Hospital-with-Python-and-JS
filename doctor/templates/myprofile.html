@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashbord</title>
+  <link rel="stylesheet" href="{% static 'css/myprofile.css'%}">
+  <link rel="stylesheet" href="{% static 'css/all.min.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="header_dash">
+    <div class="loh">
+      <i class="fa-solid fa-stethoscope"><span class="clog"><span>m</span>edical <span>c</span>are</span></i>
+    </div>
+    <div class="right_area">
+      <a href="#" class="logout_btn">Logout</a>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="{% static 'ges/IMG_٢٠٢١١٠٣١_١٢٥٧٢٤.jpg'%}" alt="">
+      <h4>Basem</h4>
+    </div>
+
+    <a href="dashbord.html"><i class="fa-sharp fa-solid fa-house"></i><span>home</span></a>
+    <a href="myappointment.html"><i class="fa-thin fa-solid fa-calendar-days"></i><span>appiontment</span></a>
+    <a href="patient.html"><i class="fa-solid fa-user"></i><span>patients</span></a>
+    <a href="myprofile.html"><i class="fa-solid fa-hospital-user"></i><span>my profile</span></a>
+  </div>
+  <div class="content">
+    <div class="sebtn">
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass "></i>
+        <input class="search-bar" placeholder="Search..." type="text">
+      </div>
+      <div class="dashbtn">
+        <a href="dashbord.html">
+          <button>home</button>
+        </a>
+      </div>
+    </div>
+    <div class="apointment" id="add_apointment">
+      <div class="form">
+        <div class="form_doctor">
+          <p>Edit Doctor</p>
+          <p>Basem's Profile</p>
+          <p>Profile Reg Date: 2017-01-07 09:43:35</p>
+          <p>Profile Last Updation Date: 2017-01-07 09:43:35</p>
+        </div>
+        <div id="container">
+          <div id="body_header">
+          </div>
+          <form action="index.html" method="post" class="inform">
+            <fieldset>
+              <div class="inico">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="name" name="user_name" placeholder="type your name" required
+                  pattern="[a-zA-Z0-9]+">
+              </div>
+              <div class="inico">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="tel" placeholder="enter your email" name="user_num">
+              </div>
+              <div class="inico">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="tel" placeholder="enter your number" name="user_num">
+              </div>
+              <div class="inico">
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" id="tel" placeholder="enter your address" name="user_num">
+              </div>
+              <div class="inico">
+                <input type="file" id="" placeholder="enter your number" name="user_picture">
+              </div>
+            </fieldset>
+            <fieldset>
+              <form action="">
+                <div class="inico">
+                  <i class="fa-solid fa-money-bill-1-wave"></i>
+                  <input type="number" id="tel" placeholder="enter your salary" name="user_num">
+                </div>
+                <label for="gender">choose your gender</label>
+                <select name="gender" id="">
+                  <option value="male">male</option>
+                  <option value="female">female</option>
+                </select>
+                <label for="speciality">Choose a doctor speciality:</label>
+                <select name="speciality" id="cars">
+                  <option value="Allergy and immunology">Allergy and immunology</option>
+                  <option value="Anesthesiology">Anesthesiology</option>
+                  <option value="Dermatology">Dermatology</option>
+                  <option value="Diagnostic radiology">Diagnostic radiology</option>
+                  <option value="Emergency medicine">Emergency medicine</option>
+                  <option value="Family medicine">Family medicine</option>
+                  <option value="Internal medicine">Internal medicine</option>
+                  <option value="Medical genetics">Medical genetics</option>
+                  <option value="Nuclear medicine">Nuclear medicine</option>
+                  <option value="Obstetrics and gynecology">Obstetrics and gynecology</option>
+                  <option value="Ophthalmology">Ophthalmology</option>
+                </select>
+              </form>
+            </fieldset>
+          </form>
+          <div class="btn">
+            <button type="submit">Update</button>
+          </div>
+        </div>
+      </div>
+      <div id="portfolio">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
