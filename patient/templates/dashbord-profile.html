@@ -25,12 +25,10 @@
   </head>
 
   <body>
-
     {% endblock head_body %} {% block content %}
 
     <div class="content">
       <div class="search">
-       
         <div class="dash-btn">
           <a href="dashbord.html"><button>Home</button></a>
         </div>
@@ -40,96 +38,87 @@
         <div class="form">
           <div class="form_doctor">
             <p>Edit patient</p>
-            <p>Basem's Profile</p>
-            <p>password</p>
+            <p>{{request.user.username}}'s Profile</p>
           </div>
           <div id="container">
             <div id="body_header"></div>
 
-            <form action="index.html" method="post" class="inform">
+            <form method="post" class="inform" enctype="multipart/form-data">
+              {% csrf_token %}
+
               <fieldset>
                 <div class="inico">
                   <i class="fa-solid fa-user"></i>
-                  <input
-                    type="text"
-                    id="name"
-                    name="user_name"
-                    placeholder="type your name"
-                    required
-                    pattern="[a-zA-Z0-9]+"
-                  />
+
+                  <!-- Start Name  -->
+                {{form.name}}
+                  <!-- End Name  -->
                 </div>
                 <div class="inico">
                   <i class="fa-solid fa-id-card"></i>
-                  <input
-                    type="email"
-                    id="tel"
-                    placeholder="enter your email"
-                    name="user_num"
-                  />
+
+                  <!-- Start Email  -->
+                {{form.email}}
+                </div>
+                <!-- End Email  -->
+
+                <div class="inico">
+                  <i class="fa-solid fa-id-card"></i>
+
+                  <!-- Start Number  -->!
+                  
+                   {{form.phone_number}}
+                    
+               
+                  <!-- End Number  -->
                 </div>
                 <div class="inico">
                   <i class="fa-solid fa-id-card"></i>
-                  <input
-                    type="tel"
-                    id="tel"
-                    placeholder="enter your number"
-                    name="user_num"
-                  />
+
+                  <!-- Start Address  -->
+                 
+                  {{form.address}}
                 </div>
+                <!-- End Address  -->
+
                 <div class="inico">
-                  <i class="fa-solid fa-id-card"></i>
-                  <input
-                    type="text"
-                    id="tel"
-                    placeholder="enter your address"
-                    name="user_num"
-                  />
+                  <!-- Start Picture  -->
+                  {{form.profile_img}}
                 </div>
-                <div class="inico">
-                  <input
-                    type="file"
-                    id=""
-                    placeholder="enter your number"
-                    name="user_picture"
-                  />
-                </div>
+                <!-- End Picture  -->
               </fieldset>
               <fieldset>
-                <form action="">
-                  <div class="inico">
-                    <i class="fa-solid fa-id-card"></i>
-                    <input
-                      type="text"
-                      id="tel"
-                      placeholder="enter your city"
-                      name="user_num"
-                    />
-                  </div>
+                <div class="inico">
+                  <i class="fa-solid fa-id-card"></i>
 
-                  <label for="gender">choose your gender</label>
-                  <select name="gender" id="">
-                    <option value="male">male</option>
-                    <option value="female">female</option>
-                  </select>
-                  <div class="inico">
-                    <label for="">enter your description</label>
-                    <textarea
-                      name=""
-                      id=""
-                      cols="50"
-                      rows="10"
-                      class="description"
-                    >
- enter your description</textarea
-                    >
-                  </div>
-                </form>
+                  <!-- Start City  -->
+                   {{form.city}}
+                </div>
+                <!-- End City  -->
+
+                <label for="gender">choose your gender</label>
+
+                <!-- Start Gender  -->
+                   {{form.gender}}
+               
+                <!-- End Gender  -->
+
+                <div class="inico">
+                  <label for="">enter your description</label>
+
+                  <!-- Start Description  -->
+
+                  {{form.descrption}}
+                  <!-- End Description  -->
+                </div>
               </fieldset>
+              <!-- End For -->
+            
+              <div class="btn">
+                <button type="submit">Update</button>
+              </div>
             </form>
-            <div class="btn">
-              <button type="submit">Update</button>
-            </div>
+            
           </div>
         </div>
         <div id="portfolio"></div>

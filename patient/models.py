@@ -10,16 +10,26 @@ User = get_user_model()  # getting user model
 
 
 class Patient(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    GenderChoices = (
+    ('male','male'),
+    ('female', 'female'),
+)
+    
+    
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100,blank=True, null=True)
+    email = models.CharField(max_length=100,blank=True, null=True)
     # use default profile image in intial in profile
     profile_img = models.ImageField(
         upload_to='profile_images',  default='default-profile-image-png-1-Transparent-Images.png')
-    descrption = models.CharField(max_length=500, blank=True, null=True)
-    phone_number = models.CharField(max_length=20, blank=True, null=True)
-    address = models.CharField(max_length=100, blank=True, null=True)
-
+    descrption = models.TextField(max_length=500, blank=True, null=True,default="None")
+    phone_number = models.CharField(max_length=20, blank=True, null=True ,default="None")
+    address = models.CharField(max_length=100, blank=True, null=True,default="None")
+    city = models.CharField(max_length=100, blank=True, null=True,default="None")
+    
+    gender = models.CharField(max_length=6,choices=GenderChoices,blank=True, null=True,default="male")
     def __str__(self):
         return self.user.username
 
@@ -29,7 +39,7 @@ class Patient(models.Model):
 
 def create_Patient(sender, **kwargs):
     if kwargs['created']:
-        print(type(kwargs['instance']))
-        user_Patient = Patient.objects.create(user=kwargs['instance'])
+        new_Patient = kwargs['instance']
+        Patient.objects.create(user=new_Patient,name=new_Patient.first_name,email=new_Patient.email)
 
 post_save.connect(create_Patient, sender=User)
