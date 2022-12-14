@@ -44,7 +44,7 @@
       <div class="carddoctor">
         <a href="{% url 'Profile' %}" class="myprofile-link"
           ><div class="myprofile">
-            <img src="{% static 'images/PngItem_1468479.png' %}" />
+            <img src="{{patient.profile_img.url}}" />
             <p>my profile</p>
             <p>Update photo</p>
           </div>

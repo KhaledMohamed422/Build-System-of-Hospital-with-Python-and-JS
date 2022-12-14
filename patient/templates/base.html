@@ -22,7 +22,7 @@
   <!-- Start sidebar -->
   <div class="sidebar">
     <div class="profile">
-      <img src="{% static 'images/PngItem_1468479.png' %}" />
+      <img src="{{patient.profile_img.url}}" />
       <h4>{{request.user.username}}</h4>
     </div>
 

@@ -7,11 +7,12 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='login')  
 def dashboard(request):
-    return render(request, 'patient_dashbord.html')
+    patient_user = Patient.objects.get(user=request.user)
+    return render(request, 'patient_dashbord.html',{'patient':patient_user})
 
 @login_required(login_url='login')  
 def profile(request):
-    object_Patient = get_object_or_404(Patient,user = request.user)
+    object_Patient = Patient.objects.get(user=request.user)
     
     if request.method == "POST":
         form = ProfilePatient(request.POST , request.FILES ,  instance = object_Patient)
@@ -20,12 +21,14 @@ def profile(request):
             return redirect('/Patient/Dashboard')
     else:
         form = ProfilePatient(instance = object_Patient)
-    return render(request, 'dashbord-profile.html',{'form':form})
+    return render(request, 'dashbord-profile.html',{'form':form,'patient':object_Patient})
 
 @login_required(login_url='login')  
 def bookAppointment(request):
-    return render(request, 'dashbord-app.html')
+    patient_user = Patient.objects.get(user=request.user)
+    return render(request, 'dashbord-app.html',{'patient':patient_user})
 
 @login_required(login_url='login')  
 def appointHistory(request):
-    return render(request, 'dashbord-my-app.html')
+    patient_user = Patient.objects.get(user=request.user)
+    return render(request, 'dashbord-my-app.html',{'patient':patient_user})

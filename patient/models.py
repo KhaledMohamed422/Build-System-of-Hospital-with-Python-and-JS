@@ -22,13 +22,11 @@ class Patient(models.Model):
     name = models.CharField(max_length=100,blank=True, null=True)
     email = models.CharField(max_length=100,blank=True, null=True)
     # use default profile image in intial in profile
-    profile_img = models.ImageField(
-        upload_to='profile_images',  default='default-profile-image-png-1-Transparent-Images.png')
+    profile_img = models.ImageField( upload_to='profile_images',  default='default-profile-image-png-1-Transparent-Images.png')
     descrption = models.TextField(max_length=500, blank=True, null=True,default="None")
     phone_number = models.CharField(max_length=20, blank=True, null=True ,default="None")
     address = models.CharField(max_length=100, blank=True, null=True,default="None")
     city = models.CharField(max_length=100, blank=True, null=True,default="None")
-    
     gender = models.CharField(max_length=6,choices=GenderChoices,blank=True, null=True,default="male")
     def __str__(self):
         return self.user.username

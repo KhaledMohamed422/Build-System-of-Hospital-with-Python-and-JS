@@ -45,75 +45,75 @@
 
             <form method="post" class="inform" enctype="multipart/form-data">
               {% csrf_token %}
+              {{ form.as_p }}
+<!--              <fieldset>-->
+<!--                <div class="inico">-->
+<!--                  <i class="fa-solid fa-user"></i>-->
 
-              <fieldset>
-                <div class="inico">
-                  <i class="fa-solid fa-user"></i>
+<!--                  &lt;!&ndash; Start Name  &ndash;&gt;-->
+<!--                {{form.name}}-->
+<!--                  &lt;!&ndash; End Name  &ndash;&gt;-->
+<!--                </div>-->
+<!--                <div class="inico">-->
+<!--                  <i class="fa-solid fa-id-card"></i>-->
 
-                  <!-- Start Name  -->
-                {{form.name}}
-                  <!-- End Name  -->
-                </div>
-                <div class="inico">
-                  <i class="fa-solid fa-id-card"></i>
+<!--                  &lt;!&ndash; Start Email  &ndash;&gt;-->
+<!--                {{form.email}}-->
+<!--                </div>-->
+<!--                &lt;!&ndash; End Email  &ndash;&gt;-->
 
-                  <!-- Start Email  -->
-                {{form.email}}
-                </div>
-                <!-- End Email  -->
+<!--                <div class="inico">-->
+<!--                  <i class="fa-solid fa-id-card"></i>-->
 
-                <div class="inico">
-                  <i class="fa-solid fa-id-card"></i>
+<!--                  &lt;!&ndash; Start Number  &ndash;&gt;!-->
+<!--                  -->
+<!--                   {{form.phone_number}}-->
+<!--                    -->
+<!--               -->
+<!--                  &lt;!&ndash; End Number  &ndash;&gt;-->
+<!--                </div>-->
+<!--                <div class="inico">-->
+<!--                  <i class="fa-solid fa-id-card"></i>-->
 
-                  <!-- Start Number  -->!
-                  
-                   {{form.phone_number}}
-                    
-               
-                  <!-- End Number  -->
-                </div>
-                <div class="inico">
-                  <i class="fa-solid fa-id-card"></i>
+<!--                  &lt;!&ndash; Start Address  &ndash;&gt;-->
+<!--                 -->
+<!--                  {{form.address}}-->
+<!--                </div>-->
+<!--                &lt;!&ndash; End Address  &ndash;&gt;-->
 
-                  <!-- Start Address  -->
-                 
-                  {{form.address}}
-                </div>
-                <!-- End Address  -->
+<!--                <div class="inico">-->
+<!--                  &lt;!&ndash; Start Picture  &ndash;&gt;-->
+<!--                  {{form.profile_img}}-->
+<!--                </div>-->
+<!--                &lt;!&ndash; End Picture  &ndash;&gt;-->
+<!--              </fieldset>-->
+<!--              <fieldset>-->
+<!--                <div class="inico">-->
+<!--                  <i class="fa-solid fa-id-card"></i>-->
 
-                <div class="inico">
-                  <!-- Start Picture  -->
-                  {{form.profile_img}}
-                </div>
-                <!-- End Picture  -->
-              </fieldset>
-              <fieldset>
-                <div class="inico">
-                  <i class="fa-solid fa-id-card"></i>
+<!--                  &lt;!&ndash; Start City  &ndash;&gt;-->
+<!--                   {{form.city}}-->
+<!--                </div>-->
+<!--                &lt;!&ndash; End City  &ndash;&gt;-->
 
-                  <!-- Start City  -->
-                   {{form.city}}
-                </div>
-                <!-- End City  -->
+<!--                <label for="gender">choose your gender</label>-->
 
-                <label for="gender">choose your gender</label>
+<!--                &lt;!&ndash; Start Gender  &ndash;&gt;-->
+<!--                   {{form.gender}}-->
+<!--               -->
+<!--                &lt;!&ndash; End Gender  &ndash;&gt;-->
 
-                <!-- Start Gender  -->
-                   {{form.gender}}
-               
-                <!-- End Gender  -->
+<!--                <div class="inico">-->
+<!--                  <label for="">enter your description</label>-->
 
-                <div class="inico">
-                  <label for="">enter your description</label>
+<!--                  &lt;!&ndash; Start Description  &ndash;&gt;-->
 
-                  <!-- Start Description  -->
-
-                  {{form.descrption}}
-                  <!-- End Description  -->
-                </div>
-              </fieldset>
+<!--                  {{form.descrption}}-->
+<!--                  &lt;!&ndash; End Description  &ndash;&gt;-->
+<!--                </div>-->
+<!--              </fieldset>-->
               <!-- End For -->
-            
+
               <div class="btn">
                 <button type="submit">Update</button>
               </div>

@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'UserAuthentication',
     'patient',
     'fontawesomefree',
-    'doctor'
+    'doctor',
+    'crispy_forms'
 
 ]
 
