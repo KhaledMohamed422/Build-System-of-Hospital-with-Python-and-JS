@@ -1,0 +1,83 @@
+{% extends "manager/manger_base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head_body %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashbord</title>
+    <link rel="stylesheet" href="{% static 'css/manager/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/manager/all.min.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  {% endblock head_body %}
+
+  {% block content %}
+
+    <div class="content">
+        <div class="search">
+            
+            <i class="fa-solid fa-magnifying-glass "></i>
+            <input class="search-bar" placeholder="Search..." type="text">
+            <div class="dash-btn">
+                <a href="dashbord.html"><button>Home</button></a>
+            </div>
+        </div>
+        
+        <div class="carddoctor">
+
+           <a href="user.html" class="myprofile-link"><div class="myprofile">
+                <img src="{% static 'images/PngItem_1468479.png'%}" alt="" srcset="">
+                <p>Mange Users</p>
+                <p>Total Users:4</p>
+            </div>
+          </a>
+
+          <a href="editdocto.html" class="myprofile-link">
+            <div class="myprofile">
+                <img class="myprofile-image" src="{% static 'images/OQ6UTW0.jpg'%}" alt="">
+                <p>Manage Doctors</p>
+                <p>Total Doctors:2</p>
+            </div>
+        </a>
+
+        
+        <a href="appointment.html" class="myprofile-link">
+            <div class="myprofile">    
+                <img class="myprofile-image" src="{% static 'images/calender.jpg'%}" alt="">
+                <p>Appointment</p>
+                <p>Total Appointments:6</p>
+            </div>
+        </a>
+        <a href="patient.html" class="myprofile-link">
+            <div class="myprofile">    
+                <img class="myprofile-image" src="{% static 'images/patient.jpg'%}" alt="">
+                <p>Mange patient</p>
+                <p>Total patients:5</p>
+            </div>
+        </a>
+        <a href="report.html" class="myprofile-link">
+            <div class="myprofile">    
+                <img class="myprofile-image" src="{% static 'images/490748-PH5A0U-472.jpg'%}" alt="">
+                <p>Reports</p>
+                <p>Total Reports</p>
+            </div>
+        </a>
+        
+
+        </div>
+
+
+    </div>
+</body>
+{% endblock content %}
+</html>

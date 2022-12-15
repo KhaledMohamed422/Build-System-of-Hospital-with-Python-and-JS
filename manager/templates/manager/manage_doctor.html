@@ -1,0 +1,125 @@
+{% extends "manager/manger_base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head_body %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashbord</title>
+  <link rel="stylesheet" href="{% static 'css/doctor.css'%}">
+  <link rel="stylesheet" href="{% static 'css/manager/all.min.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  {% endblock head_body %}
+
+  {% block content %}
+  <div class="content">
+    <div class="sebtn">
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass "></i>
+        <input class="search-bar" placeholder="Search..." type="text">
+      </div>
+      <div class="dashbtn">
+        <a href="#">
+          <button>home</button>
+        </a>
+      </div>
+    </div>
+
+
+    <!-- start doctors -->
+
+<!--    <form action="index.html" method="post" class="inform">-->
+<!--      <fieldset>-->
+<!--        <div class="input-specification">-->
+
+<!--          <label for="">doctor specification</label>-->
+
+<!--          <input type="text" required placeholder="enter your specification">-->
+<!--        </div>-->
+<!--        <div class="specifacation-button">-->
+<!--          <button class="btn">submit</button>-->
+<!--        </div>-->
+<!--      </fieldset>-->
+<!--    </form>-->
+
+    <!-- start manage doctor specification -->
+    <div class="mange-doctor-cation">
+      <h3>manage doctor specification</h3>
+    </div>
+    <div class="scroll">
+      <table>
+        <tr>
+          <th>Specialization</th>
+          <th>Creation Data</th>
+          <th>Updatuin Date </th>
+          <th>Action</th>
+        </tr>
+        <tr>
+
+          <td>General Physician</td>
+          <td>2022-12-09 / 1:33 Am</td>
+          <td class="active">Active</td>
+          <td>
+            <a href="edit-doctor.html"><i class="fa-solid fa-edit"></i></a>
+            <i class="fa-solid fa-trash"></i>
+          </td>
+        </tr>
+        <tr>
+
+          <td>General Physician</td>
+          <td>2022-12-09 / 1:33 Am</td>
+          <td class="active">Active</td>
+          <td>
+            <a href="edit-doctor.html"><i class="fa-solid fa-edit"></i></a>
+            <i class="fa-solid fa-trash"></i>
+          </td>
+
+        </tr>
+        <tr>
+
+          <td>General Physician</td>
+          <td>2022-12-09 / 1:33 Am</td>
+          <td class="active">Active</td>
+          <td>
+            <a href="edit-doctor.html"><i class="fa-solid fa-edit"></i></a>
+            <i class="fa-solid fa-trash"></i>
+          </td>
+        </tr>
+        <tr>
+
+          <td>General Physician</td>
+          <td>2022-12-09 / 1:33 Am</td>
+          <td class="active">Active</td>
+          <td>
+            <a href="edit-doctor.html"><i class="fa-solid fa-edit"></i></a>
+            <i class="fa-solid fa-trash"></i>
+          </td>
+        </tr>
+    </div>
+    </table>
+
+  </div>
+
+  <!-- end manage doctor specification -->
+
+
+
+  <!-- end doctors -->
+
+
+  </div>
+</body>
+
+{% endblock content %}
+</html>

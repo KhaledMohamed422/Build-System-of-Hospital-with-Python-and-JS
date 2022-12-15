@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'patient',
     'fontawesomefree',
     'doctor',
-    'crispy_forms'
+    'crispy_forms',
+    'manager'
+
 
 ]
 

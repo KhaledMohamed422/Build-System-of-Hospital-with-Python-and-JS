@@ -1,0 +1,163 @@
+{% extends "manager/manger_base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head_body %}
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashbord</title>
+  <link rel="stylesheet" href="{% static 'css/view_data_patient.css'%}">
+  <link rel="stylesheet" href="{% static 'css/manager/all.min.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  {% endblock head_body %}
+
+  {% block content %}
+  <div class="content">
+    <div class="sebtn">
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass "></i>
+        <input class="search-bar" placeholder="Search..." type="text">
+      </div>
+      <div class="dashbtn">
+        <a href="dashbord.html">
+          <button>home</button>
+        </a>
+      </div>
+    </div>
+    <div class="table">
+      <p>Patient Details</p>
+      <table>
+        <tr>
+          <th>Patient Name</th>
+          <th>Patient Contact Number</th>
+          <th>Patient Gender</th>
+          <th>Patient Medical History</th>
+          <th>Patient Email</th>
+          <th>Patient Address</th>
+          <th>Patient Age</th>
+          <th>Patient Reg Date</th>
+        </tr>
+        <tr>
+          <td>Basem Yahia</td>
+          <td>01126554981</td>
+          <td>male</td>
+          <td>she is diabetic patient</td>
+          <td>basmyhy@gmail.com</td>
+          <td>giza</td>
+          <td>20</td>
+          <td>2022-12-09 / 1:33 Am</td>
+        </tr>
+        <tr>
+          <td>Basem Yahia</td>
+          <td>01126554981</td>
+          <td>male</td>
+          <td>she is diabetic patient</td>
+          <td>basmyhy@gmail.com</td>
+          <td>giza</td>
+          <td>20</td>
+          <td>2022-12-09 / 1:33 Am</td>
+        </tr>
+        <tr>
+          <td>Basem Yahia</td>
+          <td>01126554981</td>
+          <td>male</td>
+          <td>she is diabetic patient</td>
+          <td>basmyhy@gmail.com</td>
+          <td>giza</td>
+          <td>20</td>
+          <td>2022-12-09 / 1:33 Am</td>
+        </tr>
+        <tr>
+          <td>Basem Yahia</td>
+          <td>01126554981</td>
+          <td>male</td>
+          <td>she is diabetic patient</td>
+          <td>basmyhy@gmail.com</td>
+          <td>giza</td>
+          <td>20</td>
+          <td>2022-12-09 / 1:33 Am</td>
+        </tr>
+        <tr>
+          <td>Basem Yahia</td>
+          <td>01126554981</td>
+          <td>male</td>
+          <td>she is diabetic patient</td>
+          <td>basmyhy@gmail.com</td>
+          <td>giza</td>
+          <td>20</td>
+          <td>2022-12-09 / 1:33 Am</td>
+        </tr>
+        <tr>
+          <td>Basem Yahia</td>
+          <td>01126554981</td>
+          <td>male</td>
+          <td>she is diabetic patient</td>
+          <td>basmyhy@gmail.com</td>
+          <td>giza</td>
+          <td>20</td>
+          <td>2022-12-09 / 1:33 Am</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table">
+      <p>Medical History</p>
+      <table>
+        <tr>
+          <th>Blood Pressure</th>
+          <th>Weight</th>
+          <th>Bood Sugar</th>
+          <th>Body Temprature</th>
+          <th>Medical Presciption</th>
+          <th>Visit Data</th>
+        <tr>
+          <td>125/200</td>
+          <td>56 kg</td>
+          <td>86/120</td>
+          <td>98 deg</td>
+          <td>blood pressure is high 1 kilo</td>
+          <td>2022-12-09 / 1:33 Am</td>
+        </tr>
+        <tr>
+          <td>125/200</td>
+          <td>56 kg</td>
+          <td>86/120</td>
+          <td>98 deg</td>
+          <td>blood pressure is high 1 kilo</td>
+          <td>2022-12-09 / 1:33 Am</td>
+        </tr>
+        <tr>
+          <td>125/200</td>
+          <td>56 kg</td>
+          <td>86/120</td>
+          <td>98 deg</td>
+          <td>blood pressure is high 1 kilo</td>
+          <td>2022-12-09 / 1:33 Am</td>
+        </tr>
+        <tr>
+          <td>125/200</td>
+          <td>56 kg</td>
+          <td>86/120</td>
+          <td>98 deg</td>
+          <td>blood pressure is high 1 kilo</td>
+          <td>2022-12-09 / 1:33 Am</td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</body>
+
+{% endblock content %}
+</html>

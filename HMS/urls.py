@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('UserAuthentication.urls')),
     path('Patient/', include('patient.urls')),
     path('Doctor/', include('doctor.urls')),
+    path('Manager/', include('manager.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
