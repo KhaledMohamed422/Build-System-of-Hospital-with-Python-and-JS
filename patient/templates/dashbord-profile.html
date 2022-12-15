@@ -45,7 +45,7 @@
 
             <form method="post" class="inform" enctype="multipart/form-data">
               {% csrf_token %}
-              {{ form.as_p }}
+              {{ form }}
 <!--              <fieldset>-->
 <!--                <div class="inico">-->
 <!--                  <i class="fa-solid fa-user"></i>-->
@@ -118,7 +118,7 @@
                 <button type="submit">Update</button>
               </div>
             </form>
-            
+
           </div>
         </div>
         <div id="portfolio"></div>

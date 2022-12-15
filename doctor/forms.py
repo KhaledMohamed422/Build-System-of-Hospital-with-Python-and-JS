@@ -4,6 +4,4 @@ from django.forms import ModelForm
 class ProfileDoctor(ModelForm):
     class Meta:
         model = Doctor
-        fields = ['name','gender','email','profile_img','phone_number','address']
-
-
+        fields = ['name','email','gender','phone_number','address','profile_img']
