@@ -17,7 +17,7 @@ class Patient(models.Model):
 )
     
     
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=100,blank=True, null=True)
     email = models.CharField(max_length=100,blank=True, null=True)

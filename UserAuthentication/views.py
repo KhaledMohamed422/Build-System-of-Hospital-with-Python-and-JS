@@ -42,6 +42,7 @@ def register(request):
             return redirect('login')
     else:
           form = CreateNewUser()
+
     return render(request , 'signup.html' , {'form': form})
 def sinout(request):
     logout(request)
