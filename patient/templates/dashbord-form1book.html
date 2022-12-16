@@ -43,35 +43,38 @@
               <!--This is a division tag for body header-->
               <h1>Appointment Request Form</h1>
             </div>
-            <form action="index.html" method="post" class="inform">
+            <form  method="POST" class="inform">
+              {% csrf_token %}
               <fieldset>
 
                 <label for="date">Date</label>
                 <div class="inico">
                   <i class="fa-solid fa-calendar-check"></i>
-                  <input type="date" id="name" name="user_name" required
+                  <input type="date" id="name" name="Date" required
                     pattern="[a-zA-Z0-9]+">
                 </div>
                 <label for="speciality">Choose a doctor speciality:</label>
                 <select name="speciality" id="cars">
-                  <option value="Allergy and immunology">Allergy and immunology</option>
-                  <option value="Anesthesiology">Anesthesiology</option>
-                  <option value="Dermatology">Dermatology</option>
-                  <option value="Diagnostic radiology">Diagnostic radiology</option>
-                  <option value="Emergency medicine">Emergency medicine</option>
-                  <option value="Family medicine">Family medicine</option>
-                  <option value="Internal medicine">Internal medicine</option>
-                  <option value="Medical genetics">Medical genetics</option>
-                  <option value="Nuclear medicine">Nuclear medicine</option>
-                  <option value="Obstetrics and gynecology">Obstetrics and gynecology</option>
-                  <option value="Ophthalmology">Ophthalmology</option>
+                  {% for specialization in specialization_doctor %}
+                  <option value={{specialization.name}}>{{specialization.name}}</option>
+                  {% endfor %}
                 </select>
                 
               </fieldset>
+              <div class="btn">
+                <a href="/Patient/bookAppointment_1"> 
+                  <button type="submit" onclick="myFunction()">Next</button> </a>
+              </div>
+              
             </form>
-            <div class="btn">
-              <a href="{% url 'BookAppointment_2' %}">  <button type="submit">Next</button> </a>
-            </div>
+            {% if check %}
+                
+              <script>
+                function myFunction() {
+                  alert("This Date is Past ");
+                }
+                </script>
+              {% endif %}
           </div>
         </div>
       </div>
