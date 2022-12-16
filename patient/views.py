@@ -64,8 +64,8 @@ def bookAppointment_1(request):
 
             elif free_time.data_4to6 == False:
                 list_available_dates.append(free_time)
-
-
+        
+        
         if check :
             context = {
                 'patient':patient_user,
@@ -74,7 +74,7 @@ def bookAppointment_1(request):
             }
             return render(request, 'dashbord-form1book.html',context)    
         else:
-            return redirect('/Patient/BookAppointment_2')
+            return redirect('BookAppointment_2' , slug = str(str(Date)+"_"+str(speciality)))
     context = {
                 'patient':patient_user,
                 'specialization_doctor' : specialization_doctor,
@@ -83,7 +83,12 @@ def bookAppointment_1(request):
 
 
 @login_required(login_url='login')  
-def bookAppointment_2(request):
+def bookAppointment_2(request,slug):
+    slug = str(slug)
+    Date= str(slug[0 : slug.index('_')])
+    speciality = str(slug[slug.index('_') + 1: ])
+    
+
     patient_user = Patient.objects.get(user=request.user)
 
     return render(request, 'dashbord-form2book.html',{'patient':patient_user})
