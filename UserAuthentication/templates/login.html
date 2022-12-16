@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>log in</title>
     <!-- main template css file -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'Css/style.css' %}" />
     <!-- font awesome library -->
     <link
       rel="stylesheet"
-      href="{% static 'fontawesomefree/css/all.min.css' %}"
+      href="{% static 'fontawesomefree/Css/all.min.css' %}"
     />
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,7 +27,8 @@
     <div class="log" id="id01">
       <div class="lgn">
         <div class="logsi">
-          <h1><a href="index.html">Login</a></h1>
+          <h1><a href="login">Login</a></h1>
+          <h1><a href="register">Sign Up</a></h1>
         </div>
         {% for message in messages %}
         <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
@@ -51,7 +52,7 @@
             <input
               type="password"
               name="password"
-              id=""
+              id="pass"
               placeholder="type your password"
               required
             />
@@ -63,10 +64,19 @@
           <div class="lin">
             <a href="#">Forgot password?</a>
           </div>
-          <input type="submit" value="login" class="btn" />
+          <div class="btn">
+            <input type="submit" value="login" />
+          </div>
         </form>
+        <p>Or Sign Up Using</p>
+        <div class="icon">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-google"></i></a>
+        </div>
       </div>
     </div>
     <!--end login-->
+    <script src="{% static 'Js/index.js' %}"></script>
   </body>
 </html>

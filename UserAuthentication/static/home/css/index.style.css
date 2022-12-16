@@ -180,7 +180,7 @@ html {
   .links ul {
     flex-direction: column;
     align-items: flex-start;
-    background-color:gray;
+    background-color: gray;
     height: 320px;
     padding-top: 10px;
     padding-left: 10px;
@@ -195,7 +195,8 @@ html {
   .header .links .icon:hover+ul {
     display: block;
   }
-  .header .links li{
+
+  .header .links li {
     padding: 5px;
   }
 
@@ -233,19 +234,8 @@ html {
   background: #183E9F;
   top: 29px;
 }
-
-.links ul li .photo a::before {
-  display: none;
-}
-
 .links ul li a:hover::before {
   width: 100%;
-}
-
-.photo img {
-  border-radius: 100px;
-  width: 30px;
-  height: 30px;
 }
 
 .btn-log {
@@ -343,14 +333,14 @@ html {
 
 .component div {
   display: inline;
-  border-top: 2px solid #777;
+  border-top: 2px solid #C9C5C2;
   padding-left: 60px;
 }
 
 .component .circle {
   padding-left: 15px;
   border-radius: 15px;
-  border: 2px solid #777;
+  border: 2px solid #C9C5C2;
   font-size: 10px;
   position: relative;
   top: -13px;
@@ -418,7 +408,9 @@ html {
 .caption .rbtn:hover {
   background-color: #2869FF;
 }
-
+.caption .rbtn:focus {
+  outline: none;
+}
 /*end slide show  */
 
 /* start portfolio */
@@ -470,7 +462,11 @@ html {
   background-color: #395eb5a7;
   transition: all 0.5s ease !important;
 }
-
+@media(max-width:768px){
+  .card::after {
+    height: 86%;
+  }
+}
 .card:hover::after {
   top: 0;
 }
@@ -496,7 +492,7 @@ html {
 
 .card .card-data p {
   font-size: 14px;
-  width: 60%;
+  width: 62%;
   margin: 0;
 }
 
@@ -605,15 +601,18 @@ html {
   letter-spacing: 1px;
   font-size: 1.1em;
 }
-@media(max-width:450px){
-.about-section {
-  padding: 20px;
-  margin: 0 40px;
+
+@media(max-width:450px) {
+  .about-section {
+    padding: 20px;
+    margin: 0 40px;
+  }
+
+  .about-section h1 {
+    font-weight: 400;
+  }
 }
-.about-section h1 {
-  font-weight: 400;
-}
-}
+
 .card-caption {
   text-align: center;
   margin: 50px 0;
@@ -913,7 +912,7 @@ footer .content-footer .top {
 }
 
 .content-footer .top .logo-details {
-  color:#0745BF;
+  color: #0745BF;
   font-size: 30px;
 }
 
@@ -987,6 +986,7 @@ footer .content-footer .link-boxes {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 footer .content-footer .link-boxes .box {
@@ -1018,7 +1018,6 @@ footer .content-footer .link-boxes .box {
   font-weight: 400;
   text-decoration: none;
   opacity: 0.8;
-  /* transition: all 0.4s ease  */
 }
 
 .content-footer .link-boxes .box li a:hover {
@@ -1034,7 +1033,6 @@ footer .content-footer .link-boxes .box {
   width: calc(100% + 55px);
   outline: none;
   border: 2px solid #AFAFB6;
-  /* background:white; */
   border-radius: 4px;
   padding: 0 15px;
   font-size: 15px;
@@ -1076,6 +1074,13 @@ footer .bottom-details .bottom_text {
   background-color: #112d75;
 }
 
+@media(max-width:450px) {
+  footer .bottom-details .bottom_text {
+    padding: 20px 20px;
+    /* display: block; */
+  }
+}
+
 .bottom-details .bottom_text span,
 .bottom-details .bottom_text a {
   font-size: 14px;
@@ -1084,6 +1089,7 @@ footer .bottom-details .bottom_text {
   opacity: 0.8;
   text-decoration: none;
 }
+
 
 .bottom-details .bottom_text a:hover {
   color: rgb(152, 146, 146);
@@ -1097,17 +1103,13 @@ footer .bottom-details .bottom_text {
 }
 
 @media (max-width: 900px) {
-  footer .content-footer .link-boxes {
-    flex-wrap: wrap;
-  }
-
   footer .content-footer .link-boxes .input-box {
     width: 40%;
     margin-top: 10px;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   footer {
     position: relative;
   }
@@ -1124,22 +1126,26 @@ footer .bottom-details .bottom_text {
   }
 
   footer .content-footer .link-boxes .box {
-    width: calc(100% / 3 - 10px);
+    width:33%;
   }
 
   footer .content-footer .link-boxes .input-box {
-    width: 60%;
+    width: 30%;
   }
 
   .bottom-details .bottom_text span,
   .bottom-details .bottom_text a {
-    font-size: 12px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 520px) {
   footer::before {
     top: 145px;
+  }
+
+  footer .content-footer {
+    padding: 30px 20px;
   }
 
   footer .content-footer .top {
@@ -1151,7 +1157,11 @@ footer .bottom-details .bottom_text {
   }
 
   footer .content-footer .link-boxes .box {
-    width: calc(100% / 2 - 10px);
+    width: 50%;
+  }
+
+  footer .content-footer .link-boxes .box:nth-child(3) {
+    width: 100%;
   }
 
   footer .content-footer .link-boxes .input-box {
