@@ -24,11 +24,17 @@ def profile(request):
     return render(request, 'dashbord-profile.html',{'form':form,'patient':object_Patient})
 
 @login_required(login_url='login')  
-def bookAppointment(request):
+def bookAppointment_1(request):
     patient_user = Patient.objects.get(user=request.user)
-    return render(request, 'dashbord-app.html',{'patient':patient_user})
+    return render(request, 'dashbord-form1book.html',{'patient':patient_user})
+
+
+@login_required(login_url='login')  
+def bookAppointment_2(request):
+    patient_user = Patient.objects.get(user=request.user)
+    return render(request, 'dashbord-form2book.html',{'patient':patient_user})
 
 @login_required(login_url='login')  
 def appointHistory(request):
     patient_user = Patient.objects.get(user=request.user)
-    return render(request, 'dashbord-my-app.html',{'patient':patient_user})
+    return render(request, 'dashbord-AppointHistory.html',{'patient':patient_user})
