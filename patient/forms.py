@@ -5,3 +5,6 @@ class ProfilePatient(ModelForm):
     class Meta:
         model = Patient
         fields = ['name','email','gender','phone_number','address','city','profile_img']
+        
+        
+  
