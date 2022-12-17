@@ -54,39 +54,19 @@
           <th>Action
           </th>
         </tr>
+        {%for Appointment in Data_Appointment %}
         <tr>
-          <td>Basem Yahia</td>
+          <td>{{Appointment.name}}</td>
           <td>General Physician</td>
           <td>1200</td>
-          <td>2022-12-09 / 1:33 Am</td>
+          <td>{{Appointment.data_time}}</td>
           <td>2022-12-09 / 1:33:05</td>
           <td class="active">Active</td>
           <td>
             <i class="fa-solid fa-trash"></i>
           </td>
         </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>General Physician</td>
-          <td>1200</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td class="active">Active</td>
-          <td>
-            <i class="fa-solid fa-trash"></i>
-          </td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>General Physician</td>
-          <td>1200</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td class="active">Active</td>
-          <td>
-            <i class="fa-solid fa-trash"></i>
-          </td>
-        </tr>
+        {%endfor%}
       </table>
     </div>
   </div>

@@ -1,8 +1,7 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% block head_body %}
+  {% block head_body %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,18 +18,12 @@
 </head>
 
 <body>
-{% endblock head_body %}
-{% block content %}
-
+ {% endblock head_body %} {% block content %}
+            {% if check %}
+              <script>alert("This Date is Past ");</script>
+              {% endif %}
     <div class="content">
-      <div class="search">
-            
-        <i class="fa-solid fa-magnifying-glass "></i>
-        <input class="search-bar" placeholder="Search..." type="text">
-        <div class="dash-btn">
-            <a href="dashbord.html"><button>Home</button></a>
-        </div>
-    </div>
+
 
         <div class="card">
 
@@ -51,29 +44,22 @@
                 <div class="inico">
                   <i class="fa-solid fa-calendar-check"></i>
                   <input type="date" id="name" name="Date" required
-                    pattern="[a-zA-Z0-9]+">
+                    pattern="[a-zA-Z0-9]+" >
                 </div>
                 <label for="speciality">Choose a doctor speciality:</label>
                 <select name="speciality" id="cars">
                   {% for specialization in specialization_doctor %}
-                  <option value={{specialization.name}}>{{specialization.name}}</option>
+                  <option  value={{specialization.name}} onclick="myFunction()">{{specialization.name}}</option>
                   {% endfor %}
                 </select>
                 
               </fieldset>
               <div class="btn">
-                  <button type="submit" onclick="myFunction()">Next</button> 
+                  <button type="submit" >Next</button>
               </div>
               
             </form>
-            {% if check %}
-                
-              <script>
-                function myFunction() {
-                  alert("This Date is Past ");
-                }
-                </script>
-              {% endif %}
+
           </div>
         </div>
       </div>
@@ -81,5 +67,5 @@
        
 
 </body>
-  {% endblock content %}
+{% endblock content %}
 </html>

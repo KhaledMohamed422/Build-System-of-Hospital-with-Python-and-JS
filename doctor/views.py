@@ -27,7 +27,8 @@ def profile(request):
 @login_required(login_url='login')
 def myAppointment(request):
     Doctor_user = Doctor.objects.get(user=request.user)
-    return render(request, 'myappointment.html',{'Doctor':Doctor_user})
+    Doctor_Appointment = Appointment.objects.all().filter(doctor=Doctor_user)
+    return render(request, 'myappointment.html',{'Doctor':Doctor_user,'Data_Appointment':Doctor_Appointment})
 
 
 @login_required(login_url='login')

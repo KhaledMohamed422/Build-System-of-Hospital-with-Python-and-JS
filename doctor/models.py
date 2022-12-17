@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 import uuid
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
+from patient.models import *
 
 
 class Specialization(models.Model):
@@ -50,38 +51,43 @@ class docter_schedule(models.Model):
     Date_Book = models.DateField(blank=True, null=True)
     doctor = models.ForeignKey(
         Doctor, on_delete=models.CASCADE, blank=True, null=True)
-    data_8to10 = models.BooleanField(default=False)
-    data_10to12 = models.BooleanField(default=False)
-    data_12to1 = models.BooleanField(default=False)
-    data_1to2 = models.BooleanField(default=False)
-    data_2to4 = models.BooleanField(default=False)
-    data_4to6 = models.BooleanField(default=False)
+    data1 = models.BooleanField(default=False)
+    data2 = models.BooleanField(default=False)
+    data3 = models.BooleanField(default=False)
+    data4 = models.BooleanField(default=False)
+    data5 = models.BooleanField(default=False)
+    data6 = models.BooleanField(default=False)
 
     def __str__(self):
-        x = ""
-        if self.data_8to10 != False:
-            x = str(self.doctor.user)+'/'+str(self.Date_Book)+'/'+str("1012")
-        if self.data_10to12 != False:
-            x = str(self.doctor.user)+'/'+str(self.Date_Book)+'/'+str("1201")
-        if self.data_12to1 != False:
-            x = str(self.doctor.user)+'/'+str(self.Date_Book)+'/'+str("0102")
-        if self.data_1to2 != False:
-            x = str(self.doctor.user)+'/'+str(self.Date_Book)+'/'+str("0204")
-        if self.data_2to4 != False:
-            x = str(self.doctor.user)+'/'+str(self.Date_Book)+'/'+str("0406")
-        if self.data_4to6 != False:
-            x = str(self.doctor.user)+'/'+str(self.Date_Book)+'/'+str("Full")
-        if x == "":
-            x = str(self.doctor.user)+'/'+str(self.Date_Book)+'/'+str("0810")
+        if self.data1 == False:
+            x = 'Dr.' + str(self.doctor.user) + ' at day ' + str(self.Date_Book) + ' form ' + str("08 to 10 AM")
+        elif self.data2 == False:
+            x = 'Dr.' + str(self.doctor.user) + ' at day ' + str(self.Date_Book) + ' form ' + str("10 to 12 PM")
+        elif self.data3 == False:
+            x = 'Dr.' + str(self.doctor.user) + ' at day ' + str(self.Date_Book) + ' form ' + str("12 to 01 PM")
+        elif self.data4 == False:
+            x = 'Dr.' + str(self.doctor.user) + ' at day ' + str(self.Date_Book) + ' form ' + str("01 to 02 PM")
+        elif self.data5 == False:
+            x = 'Dr.' + str(self.doctor.user) + ' at day ' + str(self.Date_Book) + ' form ' + str("02 to 04 PM")
+        elif self.data6 == False:
+            x = 'Dr.' + str(self.doctor.user) + ' at day ' + str(self.Date_Book) + ' form ' + str("04 to 06 PM")
+        else:
+            x = 'Dr.' + str(self.doctor.user) + ' at day ' + str(self.Date_Book) + ' is ' + str("Full")
         return x
 
     # def save(self, *args, **kwargs):
     #     super(Doctor, self).save(*args, **kwargs)
-
-
-# def create_Doctor(sender, **kwargs):
-#     if kwargs['created']:
-#         print(type(kwargs['instance']))
-#         Doctor.objects.create(user=kwargs['instance'])
-#
-# post_save.connect(create_Doctor, sender=User)
+    # def create_Doctor(sender, **kwargs):
+    #     if kwargs['created']:
+    #         print(type(kwargs['instance']))
+    #         Doctor.objects.create(user=kwargs['instance'])
+    #
+    # post_save.connect(create_Doctor, sender=User)
+class Appointment(models.Model):
+    name = models.CharField(max_length=100)
+    patient = models.ForeignKey( Patient, on_delete=models.CASCADE)
+    doctor = models.ForeignKey( Doctor, on_delete=models.CASCADE)
+    phone_number = models.CharField(max_length=20)
+    data_time = models.CharField(max_length=100)
+    def __str__(self):
+        return str(self.patient)+" have appointment with Dr."+str(self.doctor)
