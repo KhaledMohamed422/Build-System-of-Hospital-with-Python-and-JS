@@ -45,10 +45,13 @@ def register(request):
     if request.method == 'POST':
         form = CreateNewUser(request.POST)
         if form.is_valid():
+            user=form.save(commit=False)
             form.save()
+            Patient.objects.create(user=user).save()
             return redirect('login')
     else:
           form = CreateNewUser()
+
 
     return render(request , 'signup.html' , {'form': form})
 def sinout(request):

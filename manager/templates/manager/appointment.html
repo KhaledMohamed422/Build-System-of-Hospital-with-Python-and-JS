@@ -43,6 +43,7 @@
           <th>Consultancy Fee</th>
           <th>Appointment Date / Time</th>
           <th>Current Status</th>
+          <th>Action</th>
         </tr>
         <tr>
         
@@ -59,9 +60,15 @@
           {% else %}
           <td class="activate">Done</td>
           {% endif %}
+          <td><a href="edit_Appointment/{{ Appointment_item.id }}"><i class="fa-solid fa-eye" ></i><a href="deleteAppointment/{{ Appointment_item.id  }}"><i class="fa-solid fa-trash"></i></td>
+          {% endfor %}
+
         </tr>
-        {% endfor %}
+        </tr>
+
+
       </table>
+
     </div>
   </div>
 </body>

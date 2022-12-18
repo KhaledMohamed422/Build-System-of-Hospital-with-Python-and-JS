@@ -1,7 +1,7 @@
-{% extends "base_dr.html" %} {% load static %}
+{% extends "base_dr.html" %}{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  {% block head_body %}
+{% block head_body %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,16 +18,21 @@
 </head>
 
 <body>
- {% endblock head_body %} {% block content %}
-            {% if check %}
-              <script>alert("This Date is Past ");</script>
-              {% endif %}
+<div class="header_dash">
+        <div class="loh">
+            <i class="fa-solid fa-stethoscope"><span class="clog"><span> m</span>edical <span>c</span>are</span></i>
+          </div>
+        <div class="right_area">
+            <a href="{% url 'logout' %}" class="logout_btn">Logout</a>
+        </div>
+    </div>
+  {% endblock head_body %}}
+ {% block content %}
     <div class="content">
 
 
         <div class="card">
 
-            
       <div class="apointment" id="add_apointment" >
         <div class="form">
           <div id="container">

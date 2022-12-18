@@ -29,13 +29,3 @@ class Patient(models.Model):
     def __str__(self):
         return self.user.username
 
-    def save(self, *args, **kwargs):
-        super(Patient, self).save(*args, **kwargs)
-
-
-    def create_Patient(sender, **kwargs):
-        if kwargs['created']:
-            new_Patient = kwargs['instance']
-            Patient.objects.create(user=new_Patient,name=new_Patient.first_name,email=new_Patient.email)
-
-    post_save.connect(create_Patient, sender=User)

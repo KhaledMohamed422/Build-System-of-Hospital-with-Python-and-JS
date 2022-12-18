@@ -22,5 +22,5 @@ class Manager(models.Model):
     gender = models.CharField(max_length=6, choices=GenderChoices, blank=True, null=True, default="male")
 
     def __str__(self):
-        return self.name
+        return self.user.username
 
