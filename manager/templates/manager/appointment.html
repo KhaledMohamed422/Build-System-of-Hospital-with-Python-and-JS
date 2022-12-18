@@ -42,60 +42,25 @@
           <th>Specialization</th>
           <th>Consultancy Fee</th>
           <th>Appointment Date / Time</th>
-          <th>Appointment Creation Date</th>
           <th>Current Status</th>
-          <th>Action</th>
         </tr>
         <tr>
-          <td>Basem Yahia</td>
-          <td>Karim Abdelazime</td>
-          <td>surgery</td>
-          <td>30000</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td>Active</td>
-          <td>No Action Yet</td>
+        
+        {% for Appointment_item in Appointment_list  %}
+          <td>{{Appointment_item.doctor.user}}</td>
+          <td>{{Appointment_item.patient.user}}</td>
+    
+          <td>{{Appointment_item.doctor.Specialization}}</td>
+          <td>{{Appointment_item.doctor.salary}}</td>
+          <td>{{Appointment_item.data_time}}</td>
+          
+          {% if Appointment_item.descrption == "None"  %}
+          <td class="activate">Waiting</td>
+          {% else %}
+          <td class="activate">Done</td>
+          {% endif %}
         </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>Karim Abdelazime</td>
-          <td>surgery</td>
-          <td>30000</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td>Active</td>
-          <td>No Action Yet</td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>Karim Abdelazime</td>
-          <td>surgery</td>
-          <td>30000</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td>Active</td>
-          <td>No Action Yet</td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>Karim Abdelazime</td>
-          <td>surgery</td>
-          <td>30000</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td>Active</td>
-          <td>No Action Yet</td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>Karim Abdelazime</td>
-          <td>surgery</td>
-          <td>30000</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td>Active</td>
-          <td>No Action Yet</td>
-        </tr>
+        {% endfor %}
       </table>
     </div>
   </div>

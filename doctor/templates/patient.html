@@ -7,8 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashbord</title>
-  <link rel="stylesheet" href="{% static 'css/patient.css'%}">
-  <link rel="stylesheet" href="{% static 'css/all.min.css'%}">
+  <link rel="stylesheet" href="{% static 'Css-doctor/css/patient.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'Css-doctor/css/all.min.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -45,6 +46,13 @@
         </a>
       </div>
     </div>
+    
+    <form action="">
+      <h2>Write description here</h2>
+      <textarea name="description" id=""></textarea>
+      <button>submit</button>
+    </form>
+
     <div class="table">
       <table>
         <tr>
@@ -52,71 +60,47 @@
           <th>Patient Contact Number</th>
           <th>Patient Gender</th>
           <th>Creation Date</th>
-          <th>Update Date </th>
+          <th>Current Status</th>
           <th>Description of patient</th>
           <th>Action</th>
         </tr>
-
+        {%for Appointment in Data_Appointment %}
         <tr>
-          <td>Basem Yahia</td>
-          <td>01126554981</td>
-          <td>male</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td>dysentery</td>
+          <td>{{Appointment.name}}</td>
+          <td>{{Appointment.phone_number}}</td>
+          <td>{{Appointment.doctor.gender}}</td>
+          <td>{{Appointment.data_time}}</td>
+          <!-- Status -->
+          {% if Appointment.descrption == "None"  %}
+          <td class="activate">Waiting</td>
+          {% else %}
+          <td class="activate">Done</td>
+          {% endif %}
+          
+          <td><a href="descrption_write/{{ Appointment.id }}"><i class="fa-solid fa-edit" ></i></td>
+            <!-- <div class="form">
+              <h2>Description</h2>
+              <p>{{Appointment.descrption}}</p>
+              <button id = "Cancel">Cancel</button>
+            </div> -->
+       
+            <td><a href="delete/{{ Appointment.id }}"><i class="fa-solid fa-trash"></i></td>
+          <!-- <td><i class="fa-solid fa-edit" onclick="clik()"></i></td>
           <td>
             <i class="fa-solid fa-trash"></i>
-          </td>
+          </td> -->
         </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>01126554981</td>
-          <td>male</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td>dysentery</td>
-          <td>
-            <i class="fa-solid fa-trash"></i>
-          </td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>01126554981</td>
-          <td>male</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td>dysentery</td>
-          <td>
-            <i class="fa-solid fa-trash"></i>
-          </td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>01126554981</td>
-          <td>male</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td>dysentery</td>
-          <td>
-            <i class="fa-solid fa-trash"></i>
-          </td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>01126554981</td>
-          <td>male</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td>dysentery</td>
-          <td>
-            <i class="fa-solid fa-trash"></i>
-          </td>
-        </tr>
-
+        {% endfor %}
 
       </table>
     </div>
   </div>
+  <script>
+    function clik() {
+      let form = document.querySelector("form");
+      form.style.display = "block";
+    }
+  </script>
 </body>
 {% endblock content %}
 </html>
