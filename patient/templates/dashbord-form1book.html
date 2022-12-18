@@ -49,7 +49,7 @@
                 <label for="speciality">Choose a doctor speciality:</label>
                 <select name="speciality" id="cars">
                   {% for specialization in specialization_doctor %}
-                  <option  value={{specialization.name}} onclick="myFunction()">{{specialization.name}}</option>
+                  <option  value={{specialization.name}} >{{specialization.name}}</option>
                   {% endfor %}
                 </select>
                 
