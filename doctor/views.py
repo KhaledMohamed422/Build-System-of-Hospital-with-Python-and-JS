@@ -34,4 +34,24 @@ def myAppointment(request):
 @login_required(login_url='login')
 def patientslist(request):
     Doctor_user = Doctor.objects.get(user=request.user)
-    return render(request, 'patient.html',{'Doctor':Doctor_user})
+    patient_Appointment=Appointment.objects.all().filter(doctor=Doctor_user)
+    return render(request, 'patient.html',{'Doctor':Doctor_user,'Data_Appointment':patient_Appointment})
+
+
+@login_required(login_url='login')  
+def deletbook(request,id):
+    Appointment.objects.get(id = id).delete()
+    return redirect('/Doctor/patients') 
+
+@login_required(login_url='login')  
+def descrption_write(request,id):
+    Doctor_user = Doctor.objects.get(user=request.user)
+    print(id)
+    if request.method == "POST":
+        descrption_write = request.POST.get('descrption')
+        created_descrption = Appointment.objects.get(id = id)
+        created_descrption.descrption = descrption_write
+        created_descrption.save() 
+        return redirect('/Doctor/patients') 
+    return render(request, 'descrption-form-write.html',{'Doctor':Doctor_user} )
+    

@@ -39,16 +39,15 @@
 
     <!-- start doctors -->
 
-    <form action="index.html" method="post" class="inform">
+    <form  method="post" class="inform">
       <fieldset>
+        {% csrf_token %}
         <div class="input-specification">
-
-          <label for=""> Edit doctor specification</label>
-         
-            <input type="text" required placeholder="enter your specification">
+          <label for="">Add specification</label>
+            {{form.name}}
         </div>
         <div class="specifacation-button">
-          <button class="btn">Update</button>
+          <button class="btn">Add</button>
         </div>
       </fieldset>
     </form>

@@ -4,9 +4,7 @@ import uuid
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
-# Create your models here.
-User = get_user_model()  # getting user model
-# class Patient
+
 
 
 class Patient(models.Model):
@@ -18,7 +16,7 @@ class Patient(models.Model):
     
     
     user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True)
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    # id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=100,blank=True, null=True)
     email = models.CharField(max_length=100,blank=True, null=True)
     # use default profile image in intial in profile
@@ -35,9 +33,9 @@ class Patient(models.Model):
         super(Patient, self).save(*args, **kwargs)
 
 
-def create_Patient(sender, **kwargs):
-    if kwargs['created']:
-        new_Patient = kwargs['instance']
-        Patient.objects.create(user=new_Patient,name=new_Patient.first_name,email=new_Patient.email)
+    def create_Patient(sender, **kwargs):
+        if kwargs['created']:
+            new_Patient = kwargs['instance']
+            Patient.objects.create(user=new_Patient,name=new_Patient.first_name,email=new_Patient.email)
 
-post_save.connect(create_Patient, sender=User)
+    post_save.connect(create_Patient, sender=User)

@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.db.models import *
 from .models import *
 from doctor.models import Doctor
+from manager.models import Manager
 
 # Create your views here.
 def home(request):
@@ -21,6 +22,7 @@ def login_user(request):
         if user is not None:
             patient_user = Patient.objects.filter(user=user).first()
             doctor_user = Doctor.objects.filter(user=user).first()
+            manager_user = Manager.objects.filter(user=user).first()
             if patient_user is not None:
                messages.info(request,patient_user)
                login(request, user)
@@ -29,6 +31,11 @@ def login_user(request):
                 messages.info(request, doctor_user)
                 login(request, user)
                 return redirect('/Doctor/Dashboard')
+            else:
+                messages.info(request, manager_user)
+                login(request, user)
+                return redirect('/Manager/Dashboard')
+                
         else:
             messages.info(request , "Invaild username or password")
     return render(request , 'login.html')

@@ -43,49 +43,25 @@
           <th>Patient Contact Number</th>
           <th>Patient Gender</th>
           <th>Current Status</th>
-          <th>Updation Date</th>
           <th>Action</th>
         </tr>
+        
+        {% for Patient_item in Patient_list %}
+          
         <tr>
-          <td>Basem Yahia</td>
-          <td>01126554981</td>
-          <td>male</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td><a href="view_data_patient.html"><i class="fa-solid fa-eye"></a></i></td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>01126554981</td>
-          <td>male</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td><a href="view_data_patient.html"><i class="fa-solid fa-eye"></a></i></td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>01126554981</td>
-          <td>male</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td><a href="view_data_patient.html"><i class="fa-solid fa-eye"></a></i></td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>01126554981</td>
-          <td>male</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td><a href="view_data_patient.html"><i class="fa-solid fa-eye"></a></i></td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>01126554981</td>
-          <td>male</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-          <td><a href="view_data_patient.html"><i class="fa-solid fa-eye"></a></i></td>
-        </tr>
+          <td>{{Patient_item.user}}</td>
+          <td>{{Patient_item.phone_number}}</td>
+          <td>{{Patient_item.gender}}</td>
+          {% if Patient_item.descrption == "None"  %}
+          <td class="activate">Waiting</td>
+          {% else %}
+          <td class="activate">Done</td>
+          {% endif %}
+          <td><a href="descrption/{{ Patient_item.id }}"><i class="fa-solid fa-eye" ></i></td>
+          </tr>
+
+        {% endfor %}
+
       </table>
     </div>
   </div>

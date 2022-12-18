@@ -99,22 +99,70 @@
 }
 
 .profile {
-  width: 100%;
-  margin-bottom: 30px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
+  text-align: center;
+  position: relative;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-image: url("../images/PngItem_1468479.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.my_file {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  outline: none;
+  color: transparent;
+  width: 300px;
+  padding: 10px 0px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.my_file:hover {
+  opacity: 1;
+}
+
+.my_file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.my_file::before {
+  content: '\f030';
+  font-family: "FontAwesome";
+  font-size: 15px;
+  color: #fff;
+  display: inline-block;
+  -webkit-user-select: none;
+  margin-left: 50px;
+  padding-bottom: 20px;
+}
+
+.my_file::after {
+  content: "Update";
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 35px;
+}
+
+.myprofile-photo h4 {
+  color: #ccc;
+  margin-top: -20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.profile img {
-  width: 100px;
-  height: 100px;
-  border-radius: 100px;
-  margin-bottom: 10px;
-}
 
-.profile h4 {
-  color: #ccc;
-  margin-top: 0;
-}
 
 .sidebar a {
   color: #fff;
@@ -169,25 +217,6 @@
   .content {
     width: calc(100%);
     margin-left: 0px;
-  }
-
-  .profile {
-    width: 100%;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  .profile img {
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    margin-bottom: 10px;
-  }
-
-  .profile h4 {
-    color: #ccc;
-    margin-top: 0;
-    font-size: 15px;
   }
 }
 
@@ -296,9 +325,59 @@ td {
 }
 
 td {
-  margin: 10px;
+  height: 50px;
 }
 
 td i {
   padding-left: 5px;
+}
+
+form{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #151E2F;
+  width: 400px;
+  height: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+  color: #2869FF;
+}
+form h2{
+  padding-bottom: 10px;
+}
+textarea{
+  width:360px;
+  height: 260px;
+  font-size: 20px;
+  padding: 5px;
+  background-color: #1D283C;
+  color: #fff;
+  outline: none;
+  /* margin-top: 25px; */
+}
+button{
+  padding: 10px 20px;
+  margin-top: 5px;
+  border: none;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.active {
+  background-color: #163536;
+  color: #29A36E;
+  border-radius: 10px;
+  display: inline-block;
+  width: 100px;
+  transition: 0.5s ease;
+}
+
+.active:hover {
+  background-color: #0b2424;
+  color: #74cba5;
+  cursor: pointer;
 }

@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashbord</title>
-    <link rel="stylesheet" href="{% static 'css/style-my-app.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/all.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css-patient/AppointHistory-css/style-my-app.css' %} ">
+    <link rel="stylesheet" href="{% static 'css-patient/css-Dashboard/all.min.css' %} ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -36,6 +36,7 @@
       </div>
 
       <div class="scroll">
+       
     <table>
         <tr>
           <th>Doctor Name</th>
@@ -44,8 +45,8 @@
           <th>Appointment Date / Time</th>
           <th>Appointment Creation Date </th>
           <th>Current Status</th>
-          <th>Action
-          </th>
+          <th>Status</th>
+          <th>Action</th>
         </tr>
        {%for Appointment in Data_Appointment%}
         <tr>
@@ -54,8 +55,25 @@
           <td>{{Appointment.doctor.salary}} EPG </td>
           <td>{{Appointment.data_time}}</td>
           <td>2022-12-09 / 1:33:05</td>
-          <td class="active">Active</td>
-          <td><i class="fa-solid fa-trash"></i></td>
+          
+          <!-- Status -->
+          {% if Appointment.descrption == "None"  %}
+          <td class="active">Waiting</td>
+          {% else %}
+          <td class="active">Done</td>
+          {% endif %}
+            
+          
+          
+          <td><a href="descrption/{{ Appointment.id }}"><i class="fa-solid fa-eye" ></i></td>
+          <!-- <div class="form">
+            <h2>Description</h2>
+            <p>{{Appointment.descrption}}</p>
+            <button id = "Cancel">Cancel</button>
+          </div> -->
+     
+          <td><a href="delete/{{ Appointment.id }}"><i class="fa-solid fa-trash"></i></td>
+        </tr>
         </tr>
         {%endfor%}
 
@@ -63,6 +81,17 @@
       </table>
 
     </div>
+    <!-- <script>
+      let form = document.querySelector(".form");
+      function clik() {
+        form.style.display = "block";
+      }
+      let button = document.getElementById('Cancel');
+
+      button.onclick = function () {
+        form.style.display = "none";
+      }
+    </script> -->
 </body>
 {% endblock content %}
 </html>

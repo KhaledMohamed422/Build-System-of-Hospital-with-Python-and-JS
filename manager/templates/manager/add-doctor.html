@@ -38,40 +38,49 @@
 
 
     <!-- start doctors -->
-
-    <form action="index.html" method="post" class="inform">
+    <h1>{{errors}}</h1>
+    <form method="POST" class="inform">
       <fieldset>
-        
+        {% csrf_token %}
+    
+        <div class="input-specification">
+          <label for="">Enter User</label>
+            {{form.user}}
+        </div>
         <div class="input-specification">
           <label for="">doctor specification</label>
-            <input type="text" required placeholder="select specification">
+            {{form.Specialization}}
         </div>
         <div class="input-specification">
           <label for="">Doctor Name</label>
-            <input type="text" required placeholder="enter Doctor Name">
+          {{form.name}}
         </div>
         <div class="input-specification">
           <label for="">Doctor Clinic Address</label>
-            <input type="text" required placeholder="enter your Clinic Address ">
+          {{form.address}}
         </div>
         <div class="input-specification">
           <label for="">Doctor consultancy Fee</label>
-            <input type="text" required placeholder="enter Doctor consultancy Fee">
+          {{form.salary}}
         </div>
         <div class="input-specification">
           <label for="">Doctor Contact no</label>
-            <input type="text" required placeholder="enter Doctor Contact no">
+          {{form.phone_number}}
         </div>
         
         <div class="input-specification">
           <label for="">Doctor email</label>
-            <input type="text" required placeholder="enter Doctor Email">
+          {{form.email}}
+        </div>
+        <div class="input-specification">
+          <label for="">Gender</label>
+          {{form.gender}}
         </div>
 
-        <div class="input-specification">
+        <!-- <div class="input-specification">
           <label for="">Password</label>
             <input type="text" required placeholder="New Password">
-        </div>
+        </div> -->
 
         <div class="specifacation-button">
           <button class="btn">submit</button>

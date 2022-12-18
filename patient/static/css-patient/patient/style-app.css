@@ -107,21 +107,67 @@
 }
 
 .profile {
-  width: 100%;
-  margin-bottom: 30px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
   text-align: center;
+  position: relative;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-image: url("../images/PngItem_1468479.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
-.profile img {
-  width: 100px;
-  height: 100px;
-  border-radius: 100px;
-  margin-bottom: 10px;
+.my_file {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  outline: none;
+  color: transparent;
+  width: 300px;
+  padding: 10px 0px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
 }
 
-.profile h4 {
+.my_file:hover {
+  opacity: 1;
+}
+
+.my_file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.my_file::before {
+  content: '\f030';
+  font-family: "FontAwesome";
+  font-size: 15px;
+  color: #fff;
+  display: inline-block;
+  -webkit-user-select: none;
+  margin-left: 50px;
+  padding-bottom: 20px;
+}
+
+.my_file::after {
+  content: "Update";
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 35px;
+}
+
+.myprofile-photo h4 {
   color: #ccc;
-  margin-top: 0;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .sidebar a {
@@ -177,25 +223,6 @@
   .content {
     width: 100%;
     margin-left: 0px;
-  }
-
-  .profile {
-    width: 100%;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  .profile img {
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
-    margin-bottom: 10px;
-  }
-
-  .profile h4 {
-    color: #ccc;
-    margin-top: 0;
-    font-size: 15px;
   }
 }
 
@@ -295,66 +322,51 @@ start add apointment
 
 
 
-.apointment {
+ .apointment {
   margin-top: 20px;
-  width: 100%;
-  height: auto;
+  width: 70%;
   background-color: #101827;
 }
-
+@media (max-width:1024px){
+  .apointment{
+    width: 60%;
+  }
+}
+@media (max-width:1024px){
+  .apointment{
+    width: 100%;
+  }
+}
+@media (max-width:576px){
+  .apointment{
+    width: 100%;
+  }
+}
 .form {
   background-color: #1D283C;
+  border-radius: 10px;
 }
 
 #body_header {
-  width: auto;
-  margin: 0px 20px;
   text-align: center;
   color: #fff;
 }
 
 #body_header h1 {
-  padding: 30px;
-  font-size: 40px;
+  padding: 30px 0;
+  font-size: 1.5em;
 }
-
-
-@media(max-width:768px) {
-  #body_header h1 {
-    font-size: 15px;
+@media (max-width:576px){
+  #body_header h1{
+    font-size: 1.2em;
   }
+
 }
-
-
-@media(max-width:992px) {
-  #body_header h1 {
-    font-size: 20px;
-    padding: 20px;
-  }
-}
-
-
-@media(min-width:1200px) {
-  #body_header h1 {
-    font-size: 25px;
-  }
-}
-
-@media(max-width:768px) {
-  #body_header h1 {
-    font-size: 15px;
-  }
-}
-
-
 .inform {
-  border-radius: 8px;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
   background-color: #1D283C;
 }
-
 .inform input[type="text"],
 .inform input[type="password"],
 input[type="date"],
@@ -368,70 +380,117 @@ input[type="url"],
 textarea,
 select {
   border: none;
-  font-size: 1.1em;
-  height: auto;
-  margin: auto;
+  font-size: 1em; 
   outline: 0;
   padding: 6px;
-  width: 100%;
+  width: 850px;
   background-color: #1D283C;
   border-bottom: 1px solid rgba(0, 0, 0, 0.179);
   color: white;
-  margin-bottom: 30px;
-  padding-left: 25px;
+  margin-bottom: 15px;
+  padding-left: 30px;
 }
-
-.inform input[type="text"]:hover,
-.inform input[type="password"]:hover,
-input[type="date"]:hover,
-input[type="datetime"]:hover,
-.inform input[type="email"]:hover,
-input[type="number"]:hover,
-input[type="search"]:hover,
-input[type="tel"]:hover,
-input[type="time"]:hover,
-input[type="url"]:hover,
-textarea:hover,
-select:hover {
-  border-bottom: 1px solid #1DA1F2;
+@media (max-width:1024px){
+  .inform input[type="text"],
+  .inform input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  .inform input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea,
+  select{
+  width: 700px;
 }
-
-input[type="radio"],
-input[type="checkbox"] {
-  margin: 0 4px 8px 0;
 }
-
+@media (max-width:576px){
+  .inform input[type="text"],
+  .inform input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  .inform input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea,
+  select{
+    width: 270px;
+  }
+}
+@media(min-width:425px) and (max-width:575px){
+  .inform input[type="text"],
+  .inform input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  .inform input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea,
+  select{
+    width: 370px;
+  }
+}
+@media(min-width:1025px) and (max-width:1440px){
+  .inform input[type="text"],
+.inform input[type="password"],
+input[type="date"],
+input[type="datetime"],
+.inform input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select{
+    width: 500px;
+  }
+}
 select {
   padding: 6px;
   height: 32px;
   border-radius: 2px;
 }
-
-@media(max-width:576px) {
-  .input-image {
-    font-size: 0.9em;
-    color: black;
-    background-color: transparent;
-    width: 180px;
-  }
-
+fieldset {
+  width: 40%;
+  margin-bottom: 10px;
+  border: none;
 }
-
-.input-image {
-  font-size: 1.1em;
-  color: black;
-  background-color: transparent;
-}
-
-.button-image {
-  background-color: #101827;
-}
-
-.btn {
+label {
+  display: block;
+  margin: 10px;
+  color: white;
   width: 100%;
-  text-align: center;
-  margin-top: -30px;
-  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+::placeholder {
+  color: white;
+}
+fieldset .inico {
+  position: relative;
+}
+fieldset .inico i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #1DA1F2;
+}
+@media (max-width: 567px) {
+  fieldset .inico {
+    position: relative;
+    text-align: center;
+    width: 72%;
+    font-size: 0.9em;
+  }
 }
 
 .btn button {
@@ -439,9 +498,9 @@ select {
   color: #FFF;
   background-color: #2869FF;
   font-size: 15px;
-  margin: 10px auto;
+  margin: 10px;
   font-style: normal;
-  border-radius: 10px;
+  border-radius: 5px ;
   border: none;
   transition: 0.5s ease;
 }
@@ -456,52 +515,4 @@ button:focus {
   outline: none;
 }
 
-fieldset {
-  width: 40%;
-  margin-bottom: 27px;
-  border: none;
-}
 
-@media(max-width:768px) {
-  fieldset {
-    width: 90%;
-  }
-
-  .btn button {
-    width: 200px;
-    font-size: 15px;
-    padding: 10px;
-  }
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  margin-top: 10px;
-  color: white;
-  width: 100%;
-}
-
-::placeholder {
-  color: white;
-}
-
-fieldset .inico {
-  position: relative;
-}
-
-fieldset .inico i {
-  position: absolute;
-  top: 10px;
-  color: #1DA1F2;
-}
-
-@media (max-width: 567px) {
-  fieldset .inico {
-    position: relative;
-    text-align: center;
-    /* margin: auto; */
-    width: 72%;
-    font-size: 0.9em;
-  }
-}

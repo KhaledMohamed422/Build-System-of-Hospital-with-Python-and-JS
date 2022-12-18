@@ -7,14 +7,15 @@ from patient.models import *
 
 
 class Specialization(models.Model):
-    Specialization_name = (
-        ('Diagnostic_radiology', 'Diagnostic_radiology'),
-        ('Anesthesiology', 'Anesthesiology'),
-        ('Dermatology', 'Dermatology'),
-        ('Blood', 'Blood'),
-    )
-    name = models.CharField(
-        max_length=100, choices=Specialization_name, blank=True, null=True)
+    # Specialization_name = (
+    #     ('Diagnostic_radiology', 'Diagnostic_radiology'),
+    #     ('Anesthesiology', 'Anesthesiology'),
+    #     ('Dermatology', 'Dermatology'),
+    #     ('Blood', 'Blood'),
+    # )
+    # name = models.CharField(
+    #     max_length=100, choices=Specialization_name, blank=True, null=True)
+    name = models.CharField(max_length=100,  blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -29,7 +30,7 @@ class Doctor(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, unique=True)
     Specialization = models.ForeignKey(
         Specialization, on_delete=models.CASCADE, null=True)
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    # id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=100, blank=True, null=True)
     email = models.CharField(max_length=100, blank=True, null=True)
     profile_img = models.ImageField(
@@ -89,5 +90,6 @@ class Appointment(models.Model):
     doctor = models.ForeignKey( Doctor, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=20)
     data_time = models.CharField(max_length=100)
+    descrption = models.TextField(max_length=500, blank=True, null=True,default="None")
     def __str__(self):
         return str(self.patient)+" have appointment with Dr."+str(self.doctor)

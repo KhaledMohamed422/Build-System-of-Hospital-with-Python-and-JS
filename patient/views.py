@@ -5,7 +5,7 @@ from .models import *
 from doctor.models import *
 import datetime
 from .forms import *
-from django.contrib.auth.decorators import login_required 
+from django.contrib.auth.decorators import login_required
 Date = None
 speciality = None
 @login_required(login_url='login')  
@@ -124,4 +124,17 @@ def appointHistory(request):
     patient_Appointment=Appointment.objects.all().filter(patient=patient_user)
     return render(request, 'dashbord-AppointHistory.html',{'patient':patient_user,'Data_Appointment':patient_Appointment})
 
+@login_required(login_url='login')  
+def deletbook(request,id):
+    Appointment.objects.get(id = id).delete()
+    return redirect('/Patient/AppointHistory')
 
+@login_required(login_url='login')  
+def descrption(request,id):
+    patient_user = Patient.objects.get(user=request.user)
+    # descrption = request.POST['descrption'] 
+    # created_descrption = Appointment.objects.get(id = id)
+    # created_descrption.descrption = descrption
+    # created_descrption.save() 
+    return render(request, 'descrption-form-.html',{'patient':patient_user , 'descrption_Paragrah' : Appointment.objects.get(id = id).descrption})
+    # return redirect('/Patient/AppointHistory')
