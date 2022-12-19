@@ -7,15 +7,8 @@ from patient.models import *
 
 
 class Specialization(models.Model):
-    # Specialization_name = (
-    #     ('Diagnostic_radiology', 'Diagnostic_radiology'),
-    #     ('Anesthesiology', 'Anesthesiology'),
-    #     ('Dermatology', 'Dermatology'),
-    #     ('Blood', 'Blood'),
-    # )
-    # name = models.CharField(
-    #     max_length=100, choices=Specialization_name, blank=True, null=True)
-    name = models.CharField(max_length=100,  blank=True, null=True)
+
+    name = models.CharField(max_length=100,  blank=True, null=True,unique=True)
 
     def __str__(self):
         return self.name

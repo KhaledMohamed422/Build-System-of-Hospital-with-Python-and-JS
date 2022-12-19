@@ -113,7 +113,7 @@ def bookAppointment_2(request,slug):
             elif free_time.data5 == False:
                 list_available_dates.append(free_time)
 
-        return render(request, 'dashbord-form2book.html', {'patient': patient_user, 'list_available_dates': list_available_dates})
+        return redirect('/Patient/Dashboard')
     else :
           return render(request, 'dashbord-form2book.html',{'patient':patient_user,'list_available_dates':list_available_dates})
 
@@ -132,9 +132,4 @@ def deletbook(request,id):
 @login_required(login_url='login')  
 def descrption(request,id):
     patient_user = Patient.objects.get(user=request.user)
-    # descrption = request.POST['descrption'] 
-    # created_descrption = Appointment.objects.get(id = id)
-    # created_descrption.descrption = descrption
-    # created_descrption.save() 
     return render(request, 'descrption-form-.html',{'patient':patient_user , 'descrption_Paragrah' : Appointment.objects.get(id = id).descrption})
-    # return redirect('/Patient/AppointHistory')

@@ -21,13 +21,17 @@
 
   <!-- Start sidebar -->
   <div class="sidebar">
-    <div class="profile">
-      <img src="{{patient.profile_img.url}}" />
-      <h4>{{request.user.username}}</h4>
+    
+    <div class="myprofile-photo">
+      <div class="profile">
+        <img src="{{patient.profile_img.url}}" />
+        </div>
+        <h4>{{request.user.username}}</h4>
     </div>
 
-    <a href="{% url 'Dashboard' %}"
-      ><i class="fa-sharp fa-solid fa-house"></i><span>Home</span></a
+
+    <a href="/Patient/Dashboard">
+      <i class="fa-sharp fa-solid fa-house"></i><span>Home</span></a
     >
     <a href="{% url 'BookAppointment_1' %}"
       ><i class="fa-solid fa-solid fa-calendar-days"></i

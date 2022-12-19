@@ -8,10 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashbord</title>
-    <link rel="stylesheet" href="{% static 'css-patient/css-Dashboard/style.css' %}" />
-    <link
+    <link rel="stylesheet" href="{% static 'patient/css/style.css' %}" />
+    <link 
       rel="stylesheet"
-      href="{% static 'css-patient/css-Dashboard/all.min.css' %}"
+      href="{% static 'patient/css/all.min.css' %}"
     />
     <link
       rel="stylesheet"
@@ -35,12 +35,9 @@
 
     <!-- Start content -->
     <div class="content">
-      <div class="search">
-        
-        <div class="dash-btn">
-          <a href="{% url 'Dashboard' %}"><button>Home</button></a>
-        </div>
-      </div>
+
+     <div class="card"> 
+      
       <div class="carddoctor">
         <a href="{% url 'Profile' %}" class="myprofile-link"
           ><div class="myprofile">

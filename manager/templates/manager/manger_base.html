@@ -12,6 +12,7 @@
 
           <div class="right_area">
               <a href="/Patient_ class.pdf" class="logout_btn">Logout</a>
+              <a href="/logout" class="logout_btn">Logout</a>
           </div>
       </div>
 
@@ -20,22 +21,23 @@
 
         <div class="myprofile-photo">
             <div class="profile">
+              <img src="{{manager_user.profile_img.url}}" alt="">
               <input type="file" class="my_file" name="" id="">
             </div>
-            <h4>Basem</h4>
+            <h4>{{manager_user.name}}</h4>
 
 
 
-        <a href="Dashboard"><i class="fa-sharp fa-solid fa-house"></i><span>Home</span></a>
-        <a href="AddDoctor"><i class="fa-solid fa-solid fa-user-doctor"></i><span>Add Doctor</span></a>
-        <a href="AddSpecification"><i class="fa-solid fa-solid fa-user-doctor"></i><span>Add Specification</span></a>
-        <a href="AddUser"><i class="fa-solid fa-solid fa-user-doctor"></i><span>Add User</span></a>
+        <a href="\Manager\Dashboard"><i class="fa-sharp fa-solid fa-house"></i><span>Home</span></a>
+        <a href="\Manager\AddDoctor"><i class="fa-solid fa-solid fa-user-doctor"></i><span>Add Doctor</span></a>
+        <a href="\Manager\AddSpecification"><i class="fa-solid fa-solid fa-user-doctor"></i><span>Add Specification</span></a>
+        <a href="\Manager\AddUser"><i class="fa-solid fa-solid fa-user-doctor"></i><span>Add User</span></a>
 
-        <a href="ManageDoctor"><i class="fa-solid fa-user"></i><span>Doctors</span></a>
-        <a href="Appointment"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
-        <a href="ManagePatient"><i class="fa-solid fa-hospital-user"></i><span>Patients</span></a>
-        <a href="ManageUser"><i class="fa-solid fa-user"></i><span>Users</span></a>
-        <a href="ManageSpecification"><i class="fa-solid fa-user"></i><span>Specifications</span></a>
+        <a href="\Manager\ManageDoctor"><i class="fa-solid fa-user"></i><span>Doctors</span></a>
+        <a href="\Manager\Appointment"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
+        <a href="\Manager\ManagePatient"><i class="fa-solid fa-hospital-user"></i><span>Patients</span></a>
+        <a href="\Manager\ManageUser"><i class="fa-solid fa-user"></i><span>Users</span></a>
+        <a href="\Manager\ManageSpecification"><i class="fa-solid fa-user"></i><span>Specifications</span></a>
 
 
     </div>

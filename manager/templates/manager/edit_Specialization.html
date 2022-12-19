@@ -3,13 +3,12 @@
 <html lang="en">
 {% block head_body %}
 
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashbord</title>
-  <link rel="stylesheet" href="{% static 'css/view_data_patient.css'%}">
+  <link rel="stylesheet" href="{% static 'css/doctor.css'%}">
   <link rel="stylesheet" href="{% static 'css/manager/all.min.css'%}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -24,7 +23,7 @@
   {% endblock head_body %}
 
   {% block content %}
-  <div class="content">
+ <div class="content">
     <div class="sebtn">
       <div class="search">
         <i class="fa-solid fa-magnifying-glass "></i>
@@ -36,24 +35,26 @@
         </a>
       </div>
     </div>
-    <div class="table">
-      <p>Specialization Details</p>
-      <table>
-        <tr>
-          <th>Specialization</th>
-          <th>Available Doctors</th>
-          <th>Action </th>
-        </tr>
-        {%for spec,num in list_spec_num%}
-        <tr>
-          <td>{{spec}}</td>
-          <td>{{num}}</td>
-          <td><a href="edit_Specialization/{{ spec.id }}"><i class="fa-solid fa-eye" ></i><a href="deleteSpecialization/{{ spec.id }}"><i class="fa-solid fa-trash"></i></td>
-        </tr>
-      {%endfor%}
-      </table>
-    </div>
+    <div class="apointment" id="add_apointment">
+      <div class="form">
+        <h1>{{form.errors}}</h1>
+        <div id="container">
+          <div id="body_header">
+          </div>
+          <form method="post" class="inform" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form }}
 
+            <div class="btn">
+            <button type="submit">Update</button>
+          </div>
+          </form>
+
+        </div>
+      </div>
+      <div id="portfolio">
+      </div>
+    </div>
   </div>
 </body>
 

@@ -38,59 +38,23 @@
     <div class="table">
       <table>
         <tr>
-          <th>Full Name</th>
-          <th>Address</th>
-          <th>City</th>
-          <th>Gender</th>
+          <th>User name</th>
           <th>Email</th>
+          <th>Is admin</th>
           <th>Creation Date</th>
-          <th>Updation Date</th>
+          <th>last login</th>
+          <th>Action</th>
         </tr>
+        {% for user in All_user%}
         <tr>
-          <td>Basem Yahia</td>
-          <td>dysentery</td>
-          <td>giza</td>
-          <td>male</td>
-          <td>basmyhy@gmail.com</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.is_staff}}</td>
+          <td>{{user.date_joined}} </td>
+          <td>{{user.last_login}}</td>
+          <td></i><a href="deleteUser/{{ user.id  }}"><i class="fa-solid fa-trash"></i></td>
         </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>dysentery</td>
-          <td>giza</td>
-          <td>male</td>
-          <td>basmyhy@gmail.com</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>dysentery</td>
-          <td>giza</td>
-          <td>male</td>
-          <td>basmyhy@gmail.com</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>dysentery</td>
-          <td>giza</td>
-          <td>male</td>
-          <td>basmyhy@gmail.com</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-        </tr>
-        <tr>
-          <td>Basem Yahia</td>
-          <td>dysentery</td>
-          <td>giza</td>
-          <td>male</td>
-          <td>basmyhy@gmail.com</td>
-          <td>2022-12-09 / 1:33 Am</td>
-          <td>2022-12-09 / 1:33:05</td>
-        </tr>
+     {%endfor%}
       </table>
     </div>
   </div>
