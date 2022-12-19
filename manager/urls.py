@@ -19,5 +19,5 @@ urlpatterns = [
     path('deleteSpecialization/<int:id>', views.deleteSpecialization, name='deleteSpecialization'),
     path('edit_doctor/<int:id>', views.edit_doctor, name='edit_doctor'),
     path('edit_Specialization/<int:id>', views.edit_Specialization, name='edit_Specialization'),
-    path('edit_Appointment/<int:id>', views.edit_Appointment, name='edit_Appointment'),
+    path('descrption-form/<int:id>', views.edit_Appointment, name='edit_Appointment'),
 ]

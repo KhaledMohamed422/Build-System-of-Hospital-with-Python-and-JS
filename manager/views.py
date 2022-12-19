@@ -144,14 +144,9 @@ def edit_doctor(request,id):
 @login_required(login_url='login')
 def edit_Appointment(request,id):
     appointment = Appointment.objects.get(id=id)
-    if request.method == "POST":
-        form = Appointmentform(request.POST , request.FILES ,  instance = appointment)
-        if form.is_valid:
-            form.save()
-            return redirect('/Manager/Appointment')
-    else:
-        form = Appointmentform(instance = appointment)
-    return render(request, 'manager/edit_doctor.html',{'form':form})
+    form = Appointmentform(instance = appointment)
+    return render(request, 'manager/descrption-form.html',{'form':form})
+
 @login_required(login_url='login')
 def edit_Specialization(request,id):
     specialization = Specialization.objects.get(id=id)

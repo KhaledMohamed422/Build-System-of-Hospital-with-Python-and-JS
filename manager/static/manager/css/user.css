@@ -340,5 +340,11 @@ td {
 }
 td i {
   padding-left: 5px;
+  color: white;
+  transition: 0.5s ease;
+} 
+
+td i:hover {
+  color: #0745bf;
 }
 /* end table */

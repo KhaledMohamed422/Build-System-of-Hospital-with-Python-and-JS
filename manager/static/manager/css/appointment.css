@@ -267,6 +267,7 @@
   width: 100px;
 }
 
+
 .loh i {
   position: absolute;
   width: 300px;
@@ -280,6 +281,8 @@
     font-size: 1.5em;
   }
 }
+
+
 
 .loh i .clog {
   font-size: 1em;
@@ -322,14 +325,6 @@
   overflow-x: auto;
 }
 
-.table p {
-  color: white;
-  background-color: #1D283C;
-  width: 213px;
-  padding: 8px;
-  margin-top: 20px;
-}
-
 table {
   background-color: #151E2F;
   color: white;
@@ -351,16 +346,24 @@ td {
 }
 
 td {
-  margin: 10px;
-}
-
-td a {
-  text-decoration: none;
-  color: white;
+  height: 50px;
 }
 
 td i {
   padding-left: 5px;
+  color: white;
+  transition: 0.5s ease;
 }
 
+td i:hover {
+  color: #0745bf;
+}
 /* end table */
+.active {
+  color: #29A36E;
+  border-radius: 10px;
+  width: 80px;
+  font-weight: 700;
+  transition: 0.5s ease;
+}
+

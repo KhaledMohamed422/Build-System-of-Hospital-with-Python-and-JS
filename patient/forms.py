@@ -1,6 +1,6 @@
 from .models import *
-from django.forms import ModelForm
-from django.forms import ModelForm, TextInput, EmailInput
+from django.forms import ModelForm, TextInput, EmailInput ,FileInput
+from django import forms 
 
 class ProfilePatient(ModelForm):
     class Meta:
@@ -27,6 +27,10 @@ class ProfilePatient(ModelForm):
         'placeholder': 'enter your address',
         'id' : "tel",
         "type" : "text",
+        }),
+        'profile_img': FileInput(attrs={
+        'id' : "tel",
+        "type" : "file",
         }),
         }
 
