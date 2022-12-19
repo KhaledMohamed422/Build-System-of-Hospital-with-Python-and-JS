@@ -16,9 +16,9 @@ def AddDoctor(request):
    form = CreationDoctor()
    if request.method == 'POST':
       form = CreationDoctor(request.POST)
-      if form.is_valid():
-            form.save()
-            return redirect('/Manager/Dashboard')  
+      if form.is_valid(): 
+            form.save() 
+            return redirect('/Manager/Dashboard')
    context = {
       'form' : form,
       'errors' : form.errors,
@@ -74,7 +74,6 @@ def ManageDoctor(request):
 @login_required(login_url='login')
 def PatientData(request):
    return render(request,'manager/view_data_patient.html')
-
 
 @login_required(login_url='login')
 def ManageSpecification(request):
