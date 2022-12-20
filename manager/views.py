@@ -7,6 +7,7 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 from doctor.forms import *
 
+
 # Create your views here.
 @login_required(login_url='login')
 def Dashboard(request):
@@ -70,6 +71,14 @@ def AddSpecification(request):
 def myAppointment(request):
    Appointment_list = Appointment.objects.all()
    manager_user = Manager.objects.get(user=request.user)
+   # Appointment_search_list=[]
+   # if  request.method == 'POST':
+   #     Appointment_search =request.POST.get('Appointment_Search', False)
+   #     Appointment_search_list.append(Appointment.objects.filter(name__icontains=Appointment_search))
+   #     Appointment_search_list.append(Appointment.objects.filter(data_time__icontains=Appointment_search))
+   #     return render(request, 'manager/appointment.html',
+   #                   {'Appointment_list': Appointment_list, 'manager_user': manager_user,'Appointment_search_list':Appointment_search_list})
+   # else:
    return render(request,'manager/appointment.html',{'Appointment_list' : Appointment_list,'manager_user':manager_user})
 
 @login_required(login_url='login')
@@ -133,6 +142,7 @@ def deleteAppointment(request,id):
 @login_required(login_url='login')
 def edit_doctor(request,id):
     Doctor_user = Doctor.objects.get(id=id)
+    manager_user = Manager.objects.get(user=request.user)
     if request.method == "POST":
         form = ProfileDoctor(request.POST , request.FILES ,  instance = Doctor_user)
         if form.is_valid:
@@ -140,24 +150,40 @@ def edit_doctor(request,id):
             return redirect('/Manager/ManageDoctor')
     else:
         form = ProfileDoctor(instance = Doctor_user)
-    return render(request, 'manager/edit_doctor.html',{'form':form,'Doctor':Doctor_user})
+    return render(request, 'manager/edit_doctor.html',{'form':form,'Doctor':Doctor_user,'manager_user':manager_user})
 @login_required(login_url='login')
 def edit_Appointment(request,id):
     appointment = Appointment.objects.get(id=id)
+    manager_user = Manager.objects.get(user=request.user)
     form = Appointmentform(instance = appointment)
-    return render(request, 'manager/descrption-form.html',{'form':form})
+    return render(request, 'manager/descrption-form.html',{'form':form,'manager_user':manager_user})
 
 @login_required(login_url='login')
 def edit_Specialization(request,id):
     specialization = Specialization.objects.get(id=id)
+    manager_user = Manager.objects.get(user=request.user)
     if request.method == "POST":
         form = Specializationform(request.POST , request.FILES ,  instance = specialization)
         if form.is_valid():
             form.save()
             return redirect('/Manager/ManageSpecification')
         else:
-            return render(request, 'manager/edit_Specialization.html',{'form':form , 'errors': form.errors})
+            return render(request, 'manager/edit_Specialization.html',{'form':form , 'errors': form.errors,'manager_user':manager_user})
             
     else:
         form = Specializationform(instance = specialization)
-        return render(request, 'manager/edit_Specialization.html',{'form':form , 'errors': form.errors})
+        return render(request, 'manager/edit_Specialization.html',{'form':form , 'errors': form.errors,'manager_user':manager_user})
+
+@login_required(login_url='login')
+def profile(request):
+    manager_user= Manager.objects.get(user=request.user)
+
+    if request.method == "POST":
+        form = ManagerProfile(request.POST, request.FILES,
+                              instance=manager_user)
+        if form.is_valid:
+            form.save()
+            return redirect('Dashboard')
+    else:
+        form = ManagerProfile(instance=manager_user)
+    return render(request, 'manager/manager_profile.html', {'form': form, 'manager_user': manager_user})

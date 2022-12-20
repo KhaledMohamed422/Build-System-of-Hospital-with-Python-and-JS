@@ -11,28 +11,32 @@
         </div>
 
           <div class="right_area">
-              <a href="/Patient_ class.pdf" class="logout_btn">Logout</a>
               <a href="/logout" class="logout_btn">Logout</a>
           </div>
       </div>
 
     <div class="sidebar">
-
+<!--<link rel="stylesheet" href="{% static 'patient/css/profile.css' %} " />-->
 
         <div class="myprofile-photo">
             <div class="profile">
               <img src="{{manager_user.profile_img.url}}" alt="">
-              <input type="file" class="my_file" name="" id="">
             </div>
-            <h4>{{manager_user.name}}</h4>
+            <h4>{{request.user.username}}</h4>
+           </div>
 
+<!-- <div class="myprofile-photo">-->
+<!--      <div class="profile">-->
+<!--        <img src="{{patient.profile_img.url}}" />-->
+<!--        </div>-->
+<!--        <h4>{{request.user.username}}</h4>-->
+<!--    </div>-->
 
 
         <a href="\Manager\Dashboard"><i class="fa-sharp fa-solid fa-house"></i><span>Home</span></a>
         <a href="\Manager\AddDoctor"><i class="fa-solid fa-solid fa-user-doctor"></i><span>Add Doctor</span></a>
         <a href="\Manager\AddSpecification"><i class="fa-solid fa-solid fa-user-doctor"></i><span>Add Specification</span></a>
         <a href="\Manager\AddUser"><i class="fa-solid fa-solid fa-user-doctor"></i><span>Add User</span></a>
-
         <a href="\Manager\ManageDoctor"><i class="fa-solid fa-user"></i><span>Doctors</span></a>
         <a href="\Manager\Appointment"><i class="fa-solid fa-calendar-check"></i><span>Patients</span></a>
         <a href="\Manager\ManageUser"><i class="fa-solid fa-user"></i><span>Users</span></a>
