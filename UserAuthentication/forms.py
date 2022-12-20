@@ -14,9 +14,9 @@ class CreateNewUser(UserCreationForm):
         self.fields['email'].widget.attrs = {
             'placeholder': 'Enter your email', 'required': True}
         self.fields['password1'].widget.attrs = {
-            'placeholder': 'Enter your password'}
+            'placeholder': 'Enter your password' ,'id':'password1'}
         self.fields['password2'].widget.attrs = {
-            'placeholder': 'Enter your again password'}
+            'placeholder': 'Enter your again password','id':'password2'}
 
     class Meta:
         model = User
