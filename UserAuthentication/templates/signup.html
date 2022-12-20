@@ -54,7 +54,7 @@
             <i class="fa-solid fa-envelope"></i>
             {{form.email}}
           </div>
-          <div class="input">
+          <div class="input" id="password1" >
             <i class="fa-solid fa-lock"></i>
             {{form.password1}}
             <span class="eye">
@@ -62,10 +62,10 @@
               <i id="hide2" class="fa-regular fa-eye-slash"></i>
             </span>
           </div>
-          <div class="input">
+          <div class="input" id="password2">
             <i class="fa-solid fa-lock"></i>
             {{form.password2}}
-            
+
             <span class="eye">
               <i id="hide1" class="fa-regular fa-eye"></i>
               <i id="hide2" class="fa-regular fa-eye-slash"></i>
@@ -79,6 +79,7 @@
       </div>
     </div>
     <!--end signup-->
-  <script src="{% static '/Js/index.js' %}"></script>
+
+ <script src="{% static '/Js/sinup.js' %}"></script>
   </body>
 </html>

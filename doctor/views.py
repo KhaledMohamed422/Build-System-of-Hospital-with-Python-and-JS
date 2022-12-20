@@ -46,7 +46,6 @@ def deletbook(request,id):
 @login_required(login_url='login')  
 def descrption_write(request,id):
     Doctor_user = Doctor.objects.get(user=request.user)
-    print(id)
     if request.method == "POST":
         descrption_write = request.POST.get('descrption')
         created_descrption = Appointment.objects.get(id = id)

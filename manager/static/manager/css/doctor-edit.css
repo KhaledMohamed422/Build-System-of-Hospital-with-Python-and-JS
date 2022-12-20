@@ -323,9 +323,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: #151E2F;
-  margin-top: 20px;
+  margin-top: 60px;
   width: 420px;
   height: 180px;
+
 }
 
 @media(min-width:320px) and (max-width:576px) {
@@ -414,6 +415,20 @@ label {
   color: #0c121d;
 }
 
+ .errorsss{
+position:absolute;
+background:rgba(151, 12, 12, 0.305) ;
+color:white;
+padding:0 30px;
+margin: 10px  0 50px;
+top: 10px;
+left: 22px;
+z-index: 111;
+
+}
+.errorsss li {
+ list-style:none;
+}
 
 
 /*start table  */

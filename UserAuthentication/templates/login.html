@@ -30,13 +30,13 @@
           <h1><a href="login">Login</a></h1>
           <h1><a href="register">Sign Up</a></h1>
         </div>
-<div class="error_login">
-  {% for message in messages %}
-        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
-          {{ message }}
-        </li>
-        {% endfor %}
-</div>
+        <div class="error_login">
+          {% for message in messages %}
+          <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+            {{ message }}
+          </li>
+          {% endfor %}
+        </div>
 
         <form method="POST">
           {% csrf_token %}
@@ -55,14 +55,14 @@
             <input
               type="password"
               name="password"
-              id="pass"
+              id="password"
               placeholder="type your password"
               required
             />
-            <span class="eye">
-              <i id="hide1" class="fa-regular fa-eye"></i>
-              <i id="hide2" class="fa-regular fa-eye-slash"></i>
-            </span>
+                <span class="eye">
+                    <i id="hide2" class="fa-regular fa-eye-slash"></i>
+                    <i id="hide1" class="fa-regular fa-eye"></i>
+                </span>
           </div>
           <div class="lin">
             <a href="#">Forgot password?</a>
@@ -80,6 +80,8 @@
       </div>
     </div>
     <!--end login-->
-    <script src="{% static 'Js/index.js' %}"></script>
+    <script src="{% static '/Js/index.js' %}"></script>
+    <!-- <script src="{% static '/js/all.min.js' %}"></script> -->
+
   </body>
 </html>

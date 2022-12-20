@@ -35,8 +35,8 @@
 
 
     <!-- start doctors -->
-    {{form.errors}}
-    <form  method="post" class="inform">
+
+    <form  method="post" class="inform" >
       <fieldset>
         {% csrf_token %}
         <div class="input-specification">
@@ -48,6 +48,10 @@
         </div>
       </fieldset>
     </form>
+
+<div class="errorsss">
+     <li>{{form.errors}}</li>
+      <div>
 
     
   </div>
