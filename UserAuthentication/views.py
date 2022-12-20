@@ -56,4 +56,4 @@ def register(request):
     return render(request , 'signup.html' , {'form': form})
 def sinout(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')

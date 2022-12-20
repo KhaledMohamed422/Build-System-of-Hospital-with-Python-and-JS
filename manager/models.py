@@ -13,7 +13,7 @@ class Manager(models.Model):
 )
      
     user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True)
-    name = models.CharField(max_length=100,blank=True, null=True)
+    name = models.CharField(max_length=100,blank=True, null=True,default="None")
     email = models.CharField(max_length=100,blank=True, null=True)
     # use default profile image in intial in profile
     profile_img = models.ImageField( upload_to='profile_images',  default='default-profile-image-png-1-Transparent-Images.png')
