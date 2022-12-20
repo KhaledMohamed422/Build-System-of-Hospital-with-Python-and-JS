@@ -32,8 +32,6 @@ class ProfileDoctor(ModelForm):
         'id' : "tel",
         "type" : "file",
         }),
-        'status': forms.HiddenInput(),
-        'time_created': forms.HiddenInput()
         }
         fields = ['name','email','gender','phone_number','address','profile_img']
 class Appointmentform(ModelForm):
