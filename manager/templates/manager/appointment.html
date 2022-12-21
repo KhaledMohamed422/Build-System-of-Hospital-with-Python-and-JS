@@ -26,7 +26,7 @@
     <div class="sebtn">
       <div class="search">
         <i class="fa-solid fa-magnifying-glass "></i>
-        <input class="search-bar" placeholder="Search..." type="text">
+        <input class="search-bar" placeholder="Search by Patient Name" type="text">
       </div>
       <div class="dashbtn">
         <a href="dashbord.html">
@@ -37,8 +37,8 @@
     <div class="table">
       <table>
         <tr>
-          <th>Doctor Name</th>
           <th>Patient Name</th>
+          <th>Doctor Name</th>
           <th>Specialization</th>
           <th>Consultancy Fee</th>
           <th>Appointment Date / Time</th>
@@ -49,9 +49,9 @@
         
         {% for Appointment_item in Appointment_list  %}
         <tr>
-          <td>{{Appointment_item.doctor.user}}</td>
           <td>{{Appointment_item.patient.user}}</td>
-    
+          <td>{{Appointment_item.doctor.user}}</td>
+  
           <td>{{Appointment_item.doctor.Specialization}}</td>
           <td>{{Appointment_item.doctor.salary}}</td>
           <td>{{Appointment_item.data_time}}</td>
@@ -68,6 +68,8 @@
 
     </div>
   </div>
+  <script src="{% static '/js/patient.js' %}"></script>
+
 </body>
 
 {% endblock content %}

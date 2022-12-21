@@ -24,6 +24,13 @@
 
   {% block content %}
   <div class="content">
+    <div class="search">
+
+      <i class="fa-solid fa-magnifying-glass "></i>
+      <input class="search-bar" placeholder="Search by User name" type="text">
+
+    </div>
+
     <div class="sebtn">
   
       <div class="dashbtn">
@@ -55,6 +62,7 @@
       </table>
     </div>
   </div>
+  <script src="{% static '/js/patient.js' %}"></script>
 </body>
 
 {% endblock content %}
