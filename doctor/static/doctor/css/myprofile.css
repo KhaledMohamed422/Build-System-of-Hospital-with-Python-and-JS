@@ -101,20 +101,22 @@
   }
 }
 
-.profile {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 30px;
-  text-align: center;
-  position: relative;
-  border: 3px solid white;
-  border-radius: 50%;
-  background-image: url("../images/PngItem_1468479.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  overflow: hidden;
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-bottom: 10px;
 }
 
+.profile h4 {
+    color: #ccc;
+    margin-top: 0;
+}
+.profile {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+}
 .my_file {
   position: absolute;
   bottom: 0;
@@ -157,9 +159,21 @@
   top: 30px;
   left: 35px;
 }
-
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.profile {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+}
 .myprofile-photo h4 {
-  color: #ccc;
+  color: block;
   margin-top: -20px;
   margin-bottom: 20px;
   text-align: center;

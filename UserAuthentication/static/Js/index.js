@@ -1,4 +1,3 @@
-
 let password = document.getElementById('password');
 let container = document.querySelector('.eye');
 let eye = ['fa-regular fa-eye','fa-regular fa-eye-slash']

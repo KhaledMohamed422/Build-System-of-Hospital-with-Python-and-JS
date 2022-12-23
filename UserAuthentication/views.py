@@ -24,15 +24,15 @@ def login_user(request):
             doctor_user = Doctor.objects.filter(user=user).first()
             manager_user = Manager.objects.filter(user=user).first()
             if patient_user is not None:
-               messages.info(request,patient_user)
+               # messages.info(request,patient_user)
                login(request, user)
                return redirect('/Patient/Dashboard')
             elif doctor_user is not None:
-                messages.info(request, doctor_user)
+                # messages.info(request, doctor_user)
                 login(request, user)
                 return redirect('/Doctor/Dashboard')
             else:
-                messages.info(request, manager_user)
+                # messages.info(request, manager_user)
                 login(request, user)
                 return redirect('/Manager/Dashboard')
                 

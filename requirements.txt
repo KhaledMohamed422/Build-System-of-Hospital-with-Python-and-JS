@@ -1,3 +1,0 @@
-﻿pip install django
-pip install fontawesomefree
-pip install  pillow
