@@ -12,7 +12,8 @@ from manager.models import Manager
 
 # Create your views here.
 def home(request):
-   return render(request,'index.html')
+    all_doctor=Doctor.objects.all()
+    return render(request,'index.html',{'all_doctor':all_doctor})
 
 def login_user(request):
     if request.method == "POST":
