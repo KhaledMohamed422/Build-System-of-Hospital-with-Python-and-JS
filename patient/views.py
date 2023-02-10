@@ -55,6 +55,7 @@ def bookAppointment_2(request, slug):
     Date = str(slug[0: slug.index('_')])
     speciality = str(slug[slug.index('_') + 1:])
     list_available_dates = []
+    print(speciality)
     id = Specialization.objects.get(name=speciality)
     list_of_doctor = Doctor.objects.all().filter(Specialization=id)
     for doctor in list_of_doctor:
