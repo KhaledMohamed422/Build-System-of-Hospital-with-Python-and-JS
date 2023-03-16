@@ -12,3 +12,28 @@ The Hospital Management System is a web-based application that allows hospital s
 4. Run the server using the command `python manage.py runserver` .
 5. Access the application by navigating to http://localhost:8000/ in your web browser.
 
+
+## Features
+### User Authentication
+The Hospital Management System allows users to create accounts and authenticate themselves to access the application. Users can log in using their email and password.
+Dashboard
+Once logged in, users are taken to their personalized dashboard. Doctors have access to information about their appointments for the day and can view their patient list.
+
+### Profile Management
+Users can update their profiles with personal and professional information, such as their name, email, phone number, and specialty.
+
+### Appointment Management
+Doctors can create, view, and manage appointments for their patients. They can see a list of upcoming appointments and view the medical history of each patient.
+
+### Patient Management
+Doctors can view a list of their patients and their personal and medical information. They can also edit and update this information as needed.
+
+### Prescription Management
+Doctors can create and manage prescriptions for their patients. They can add prescriptions to the patient's medical record and view past prescriptions.
+
+### Credits As BackEnd
+This project was developed by Khaled Mohamed and Sharif Ahmed.
+
+
+
+
