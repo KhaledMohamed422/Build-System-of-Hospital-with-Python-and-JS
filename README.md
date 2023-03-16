@@ -6,11 +6,14 @@ The Hospital Management System is a web-based application that allows hospital s
 
 ##  Installation
 
-1. Clone the repository to your local machine.
-2. Create a virtual environment using virtualenv or conda.
+1. Clone the repository to your local machine `git clone https://github.com/your-username/hospital-management-system.git` .
+2. Create a virtual environment using `virtualenv` or `conda` .
 3. Install the required packages by running `pip install -r requirements.txt`.
-4. Run the server using the command `python manage.py runserver` .
-5. Access the application by navigating to http://localhost:8000/ in your web browser.
+4. Run the migrations `python manage.py migrations`
+5. Run the migrations `python manage.py migrate`
+6. python manage.py createsuperuser `python manage.py createsuperuser`
+7. Run the server using the command `python manage.py runserver` .
+8. Access the application by navigating to http://localhost:8000/ in your web browser.
 
 
 ## Features
